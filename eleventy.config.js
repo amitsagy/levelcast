@@ -8,6 +8,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/video": "assets/video" });
   eleventyConfig.addPassthroughCopy({ "src/assets/audio": "assets/audio" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/social": "assets/social" });
   eleventyConfig.addPassthroughCopy({ ".build": "assets/build" });
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
 

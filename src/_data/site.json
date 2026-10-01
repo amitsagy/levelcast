@@ -12,6 +12,6 @@
     "overallBefore": "-24.9",
     "overallAfter": "-13.7",
     "preset": "strong",
-    "_note": "Measured by scripts/demo/render-levelling.swift on raw/demo/before.wav (the fictional show 'שני מיקרופונים', ep. 38), Strong preset through the app's audio chain."
+    "_note": "Measured by scripts/demo/render-levelling.swift on raw/demo/before.wav (the fictional show 'שני מיקרופונים', ep. 38), Strong preset through the app's audio chain. The published after.m4a is the same render 1.5 dB lower so AAC encoding does not clip; the gap is unchanged."
   }
 }

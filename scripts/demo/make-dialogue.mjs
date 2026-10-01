@@ -56,8 +56,15 @@ const DIALOGUE = [
   [GUEST, "לא תוך כדי נהיגה, חס וחלילה. אני מחכה שאני עוצרת, ורק אז כותבת מה ששמעתי."],
 ];
 
+// --dramatised widens the gap for the marketing film's opening (quiet speech
+// near -30, loud near -8, as Amit asked for the first cut); same lines, same
+// timing. The site demo always uses the plain mix.
+const DRAMA = process.argv.includes("--dramatised");
 const HOST_LUFS = -16;
-const GUEST_LUFS = -26; // about 10 LU under the host, like a quiet remote guest
+// loudnorm stops at the true-peak ceiling, so the dramatised host gets a plain
+// boost into a limiter instead.
+const HOST_DRAMA = "volume=3dB,alimiter=limit=0.89:level=false";
+const GUEST_LUFS = DRAMA ? -31 : -26; // about 10 LU under the host, like a quiet remote guest
 // A remote guest arrives band-limited; this keeps the staging honest to life.
 const GUEST_EQ = "highpass=f=180,lowpass=f=4200";
 
@@ -78,8 +85,8 @@ for (let i = 0; i < DIALOGUE.length; i++) {
     console.log(`line ${i} generated`);
   }
   const isGuest = voice === GUEST;
-  const wav = join(WORK, `l${i}.wav`);
-  const af = [isGuest ? GUEST_EQ : null, `loudnorm=I=${isGuest ? GUEST_LUFS : HOST_LUFS}:TP=-2:LRA=11`].filter(Boolean).join(",");
+  const wav = join(WORK, `${DRAMA ? "d" : "l"}${i}.wav`);
+  const af = [isGuest ? GUEST_EQ : null, `loudnorm=I=${isGuest ? GUEST_LUFS : HOST_LUFS}:TP=-2:LRA=11`, DRAMA && !isGuest ? HOST_DRAMA : null].filter(Boolean).join(",");
   execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-i", mp3, "-af", af, "-ac", "2", "-ar", "44100", wav]);
   parts.push(wav);
 }
@@ -88,7 +95,7 @@ const gap = join(WORK, "gap.wav");
 execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-t", "0.45", "-c:a", "pcm_s16le", gap]);
 const list = join(WORK, "concat.txt");
 writeFileSync(list, parts.flatMap((p) => [`file '${p}'`, `file '${gap}'`]).join("\n"));
-const out = join(WORK, "before.wav");
+const out = join(WORK, DRAMA ? "dramatised.wav" : "before.wav");
 execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", list, "-c:a", "pcm_f32le", out]);
 const dur = execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out]).toString().trim();
 console.log(`-> ${out} (${(+dur).toFixed(1)} s)`);

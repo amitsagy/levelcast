@@ -1,4 +1,20 @@
 {
   "_note": "Social posts shown on the blog page. Only posts Amit approved for publishing go here; the video file is copied into src/assets/social/ at that point, never before. Order: newest first.",
-  "items": []
+  "items": [
+    {
+      "id": "knob",
+      "date": "2026-10-01",
+      "video": "knob.mp4",
+      "poster": "knob.jpg",
+      "he": {
+        "title": "הכפתור",
+        "caption": "מכירים את זה שאתם נוהגים ומקשיבים לפודקאסט, המנחה מדבר חזק והאורח עונה בשקט?\nאתם מגבירים, ואז המנחה חוזר וזה צועק לכם באוזן.\nLevelCast מיישר בין הדוברים בזמן אמת, תוך כדי נהיגה, ואתם לא צריכים לגעת בכלום.\nבקרוב באפ סטור."
+      },
+      "en": {
+        "title": "The knob",
+        "caption": "You're driving with a podcast on, the host is loud and the guest answers quietly.\nYou turn it up, and then the host comes back shouting in your ear.\nLevelCast evens out the speakers in real time while you drive, and you don't have to touch a thing.\nComing soon to the App Store. (Video in Hebrew.)"
+      },
+      "links": {}
+    }
+  ]
 }
