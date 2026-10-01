@@ -456,7 +456,8 @@ span[dir="ltr"] { white-space: nowrap; }
 .prose a { color: var(--ink); text-decoration-color: rgb(235 148 41 / .7); }
 .prose ul { padding-inline-start: 1.2rem; }
 .prose li { margin-bottom: .5rem; }
-.prose .wide { margin-inline: calc(-1 * min(6rem, (100vw - var(--measure)) / 2 - var(--gutter))); }
+/* Breaks out of the reading column on wide screens only; never negative. */
+.prose .wide { margin-inline: calc(-1 * clamp(0px, (100vw - var(--measure)) / 2 - var(--gutter), 6rem)); }
 .checks { list-style: none; padding: 0 !important; display: grid; gap: .9rem; }
 .checks li { position: relative; padding-inline-start: 1.9rem; }
 .checks li::before {
@@ -472,7 +473,7 @@ span[dir="ltr"] { white-space: nowrap; }
 .figure--phone img { border-radius: 2rem; box-shadow: 0 0 0 1px rgb(255 255 255 / .12), 0 40px 80px -30px #000; }
 .figure--phone figcaption { text-align: center; }
 .tiers { display: grid; gap: 1rem; margin-block: 1.5rem 1rem; }
-@media (min-width: 720px) { .tiers { grid-template-columns: repeat(3, 1fr); margin-inline: calc(-1 * min(8rem, (100vw - var(--measure)) / 2 - var(--gutter))); } }
+@media (min-width: 720px) { .tiers { grid-template-columns: repeat(3, 1fr); margin-inline: calc(-1 * clamp(0px, (100vw - var(--measure)) / 2 - var(--gutter), 8rem)); } }
 .tier { padding: 1.4rem; border-radius: var(--radius); background: var(--raised); border: 1px solid var(--line); }
 .tier h3 { font: 700 1.2rem/1.2 var(--sans); margin: 0 0 .6rem; }
 .tier p { font-size: .97rem; margin: 0; }

@@ -59,6 +59,12 @@ const links = new Set();
     await page.goto(base + path, { waitUntil: "load" });
     const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
     if (w[0] > 393 || w[1] > 393) wide.push(`${path} ${w[0]}/${w[1]}`);
+    // Anything interactive must sit fully on screen.
+    const off = await page.evaluate(() => [...document.querySelectorAll("main a, main button")]
+      .filter((e) => e.offsetParent !== null)
+      .map((e) => e.getBoundingClientRect())
+      .filter((r) => r.width > 0 && (r.left < -1 || r.right > innerWidth + 1)).length);
+    if (off) wide.push(`${path} ${off} control(s) off screen`);
   }
   ok(wide.length === 0, `phone width: no page overflows 393px${wide.length ? ": " + wide.join(", ") : ""}`);
   await ctx.close();
