@@ -13,9 +13,7 @@ There are four numbers on this site, and they all come from the same minute. It'
 
 The gap is the difference between the quiet parts of the minute and the loud parts. In the original version it's <span dir="ltr">7.1 dB</span>, and after levelling <span dir="ltr">2.9 dB</span>. Both times it's the same minute, with the same speakers and the same words. The only thing that changed is the distance between the quiet voice and the loud one.
 
-Decibels are a logarithmic scale. Each step is a ratio between two levels rather than a fixed amount added on, so you can't read the drop from <span dir="ltr">7.1</span> to <span dir="ltr">2.9</span> like a discount on a price. The difference in actual loudness between the two gaps is much bigger than the difference between the numbers suggests.
-
-In practice, the first gap is the kind that sends your hand to the knob. The second is a difference the ear accepts as a normal part of a conversation, like two people talking in the same room.
+Decibels are a logarithmic scale: each step describes a ratio between two levels. So you compare the two gaps directly rather than subtracting one from the other like prices. In this minute, the first gap is the kind that sends your hand to the knob, and the second isn't.
 
 ## The overall level
 
@@ -25,7 +23,7 @@ In the original version the overall level of the minute is <span dir="ltr">-20.7
 
 ## Why this number matters
 
-There's a very cheap way to close a gap between two voices, and that's to turn the loud one down until it matches the quiet one. The gap disappears and its numbers look great, and on paper it looks like a success. Except that now the whole episode is quiet. In the car, over the road noise, you have to turn it up, and your hand goes back to the knob from the other direction.
+There's a too-easy way to close a gap between two voices: turn the loud one down until it matches the quiet one. The gap number looks good, and the whole episode goes quiet. In the car, over the road noise, you have to turn it up, and your hand goes back to the knob from the other direction.
 
 If you only look at the gap, you can't tell the two approaches apart, because both leave a small gap. That's why the overall level sits next to it. It shows which direction the gap was closed from. The quiet voice came up, the loud one was held back, and the episode as a whole stayed at a level you can hear over the road.
 
@@ -33,7 +31,11 @@ If you only look at the gap, you can't tell the two approaches apart, because bo
 
 They describe one minute. In another episode, with other speakers and another recording, the starting gap will be different, and so will the result. In an episode where both speakers already talk at the same level, there isn't much to even out, and you'll barely notice the levelling. That's fine, and it's how it should work.
 
-What the minute does show is that the method works on a real recording, with no manual editing, while the episode plays. It's one measurement, and you can listen to the result yourself.
+The minute shows that levelling works on a real recording, with no manual editing, while the episode plays. It's one measurement, and you can listen to the result yourself.
+
+## What it looks like in the app
+
+The app has three levelling strengths: off, normal and strong. Off plays the episode as it arrived. Normal is the lighter touch, and strong closes bigger gaps and suits a noisy car. You can switch between them with the levelling button in the player while you listen, and hear the difference without stopping the episode.
 
 ## Listen instead of reading
 

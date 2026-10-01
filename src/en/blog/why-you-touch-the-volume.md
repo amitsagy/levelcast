@@ -7,7 +7,7 @@ title: "Why your hand goes to the volume mid-podcast — LevelCast"
 heading: "Why your hand goes to the volume mid-podcast"
 description: "The host is loud, the guest is quiet, and you turn it up and down the whole drive. Where that gap comes from, and why even good editing usually leaves it."
 ---
-In almost every podcast with two people, there's a moment when one hand leaves the wheel. The host talks loudly, the guest answers quietly, so you turn it up. Then the host comes back and the whole car is shouting.
+In a lot of podcasts with two people, there's a moment when one hand leaves the wheel. The host talks loudly, the guest answers quietly, so you turn it up. Then the host blasts back through the speakers.
 
 It happens so often that you stop noticing. Your hand goes to the knob on its own, the way it goes to the indicator.
 
@@ -25,7 +25,7 @@ Each of those two channels sounds fine when you listen to it alone. Put them tog
 
 ## Why editing doesn't close it
 
-In a lot of productions, editing takes care of the level of the episode as a whole. It makes sure the episode isn't too quiet compared with others, and that there are no sharp jumps in it. That's important work and it does its job, but it treats the episode as one unit.
+In a lot of productions, editing takes care of the level of the episode as a whole. It makes sure the episode isn't too quiet compared with others, and that there are no sharp jumps in it. But it treats the episode as one unit.
 
 The gap between two people taking turns to talk is a different problem. Closing it means handling each voice separately, through the whole episode, every time the speaker changes. Not every production gets to that step, and certainly not in every episode.
 
@@ -41,4 +41,4 @@ You can [hear both versions of that minute]({{ collections.byKey.listen[lang] }}
 
 ## If you're a producer
 
-Levelling happens on the listener's side and doesn't touch your file. The download is still counted on your server, and ads reach the listener exactly as your server sent them. All the details are on [the page for producers]({{ collections.byKey.producers[lang] }}).
+Levelling happens on the listener's side and doesn't touch your file. The download is still counted on your server, and the episode arrives exactly as your server sent it. All the details are on [the page for producers]({{ collections.byKey.producers[lang] }}).

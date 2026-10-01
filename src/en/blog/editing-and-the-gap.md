@@ -13,21 +13,25 @@ An episode can sound great on headphones and still send your hand to the knob th
 
 The first problem is that every episode arrives at a different level. One show was recorded loud, another quiet, and if you listen to a few episodes in a row you don't want to readjust the volume every time a new one starts.
 
-There's a familiar fix for that, called normalisation. You measure the episode's average level and move the whole thing up or down until it hits a fixed target. Many editors do this before they upload an episode, and plenty of players do it themselves. After normalisation you no longer jump from a very quiet episode to a very loud one.
+There's a familiar fix for that, called normalisation. You measure the episode's average level and move the whole thing up or down until it hits a fixed target. Many editors do this before they upload an episode. After normalisation you no longer jump from a very quiet episode to a very loud one.
 
 ## The level of a conversation
 
-The second problem lives inside the episode. A podcast with two people has two voices, and each was recorded differently: on a different microphone, at a different distance from it, in a different room, and sometimes over a remote line that already squeezed the voice on the way.
+The second problem lives inside the episode. A podcast with two people has two voices, and each was recorded differently: on a different microphone, at a different distance from it, in a different room, and sometimes over a remote line.
 
 Normalisation doesn't touch any of this. It moves the whole episode together, so the gap between host and guest comes out of normalisation exactly as it went in. If the guest was quieter than the host before, they're quieter after too. It's just that the episode as a whole is now at the right level. You turn it up when the guest answers, and turn it down again at the host's next sentence, exactly as before.
 
-Closing that gap means handling each voice on its own. Big productions do it in the edit, track by track. In many small productions, where the same person records, edits and uploads, this is the step that gets left out. The average is right and the episode sounds good, but the conversation still rises and falls.
+Closing that gap means handling each voice on its own. You can do it in the edit, track by track, but not every episode gets that treatment. The average is right and the episode sounds good, but the conversation still rises and falls.
 
 ## Why you notice it in the car
 
-At home, on headphones, your brain compensates. Even a fairly quiet voice sounds clear when nothing competes with it.
+At home, on headphones, there is no noise competing with the quiet voice, so it comes through fairly clearly.
 
 In the car there's constant noise from the engine, the tyres and the wind. To hear the quiet voice over it you turn it up, and when the loud voice comes back it's much louder than it needs to be. A gap that was mildly annoying at home becomes, on the road, a reason to touch the knob every few minutes.
+
+## What happens to the producer's file
+
+Nothing. Levelling happens on the listener's phone while the episode plays, and the file on the producer's server stays as it is. Someone listening in another app hears the original episode, and someone listening in LevelCast hears it levelled. The download is counted on the producer's side, as with any other player.
 
 ## What you can do as a listener
 
