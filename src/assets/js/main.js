@@ -238,6 +238,23 @@ function initAB() {
   ui.hidden = false;
   Object.values(a).forEach((el) => { el.preload = "auto"; el.controls = false; });
 
+  // Our host answers range requests with the whole file, which leaves audio
+  // unseekable in Chrome. Pulling both minutes into memory (about 0.7 MB
+  // each) makes seeking and the drift correction exact everywhere. Start as
+  // soon as the player is near the viewport so the first press is instant.
+  let loading = null;
+  const loadBlobs = () => loading ||= Promise.all(Object.values(a).map(async (el) => {
+    try {
+      const res = await fetch(el.currentSrc || el.src);
+      if (!res.ok) return;
+      el.src = URL.createObjectURL(await res.blob());
+      el.load();
+    } catch (e) { /* keep the network source; playback still works */ }
+  }));
+  new IntersectionObserver((entries, io) => {
+    if (entries.some((e) => e.isIntersecting)) { loadBlobs(); io.disconnect(); }
+  }, { rootMargin: "600px" }).observe(root);
+
   const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
   const dur = () => a.before.duration || 60;
 
@@ -278,6 +295,7 @@ function initAB() {
     if (root.classList.contains("is-playing")) {
       a.before.pause(); a.after.pause(); setPlaying(false); return;
     }
+    await loadBlobs();
     a.after.currentTime = a.before.currentTime;
     try { await Promise.all([a.before.play(), a.after.play()]); setPlaying(true); }
     catch (e) { setPlaying(false); }

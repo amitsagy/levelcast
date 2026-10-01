@@ -100,13 +100,13 @@ for (const [name, opts] of [["desktop", { viewport: { width: 1440, height: 900 }
 
     const read = () => page.evaluate(() => {
       const m = (s) => getComputedStyle(document.querySelector(s)).transform;
-      return { media: m(".hero__media"), strip: m(".hero__strip"), content: m(".hero__content"), bar: document.querySelector(".meter .bar[data-i='1']").getAttribute("transform") || getComputedStyle(document.querySelector(".meter .bar[data-i='1']")).transform };
+      return { media: m(".hero__media"), glow: m(".hero__glow"), content: m(".hero__content"), bar: document.querySelector(".meter .bar[data-i='1']").getAttribute("transform") || getComputedStyle(document.querySelector(".meter .bar[data-i='1']")).transform };
     });
     const a = await read();
     await page.evaluate(() => window.scrollTo(0, innerHeight * 0.5));
     await page.waitForTimeout(500);
     const b = await read();
-    const layers = ["media", "strip", "content"].filter((k) => a[k] !== b[k]).length;
+    const layers = ["media", "glow", "content"].filter((k) => a[k] !== b[k]).length;
     ok(layers === 3, `${name} ${path} parallax: ${layers}/3 layers moved (${a.media} -> ${b.media})`);
 
     const storyTop = await page.evaluate(() => document.querySelector("[data-story]").offsetTop);

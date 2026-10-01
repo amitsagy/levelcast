@@ -5,24 +5,20 @@
    the end; both stand down for prefers-reduced-motion and for the in-page
    "reduce motion" switch (html.reduce-motion). */
 
-/* ---------- fonts ---------- */
-@font-face { font-family: "Heebo"; font-style: normal; font-display: swap; font-weight: 100 900;
-  src: url(/assets/fonts/heebo-hebrew-wght-normal.woff2) format("woff2");
+/* ---------- fonts ----------
+   Rubik for headings: its softened corners echo the rounded bars of the
+   mark. Assistant for running text. Both variable, Hebrew + Latin subsets. */
+@font-face { font-family: "Rubik"; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url(/assets/fonts/rubik-hebrew-wght-normal.woff2) format("woff2");
   unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
-@font-face { font-family: "Heebo"; font-style: normal; font-display: swap; font-weight: 100 900;
-  src: url(/assets/fonts/heebo-latin-wght-normal.woff2) format("woff2");
+@font-face { font-family: "Rubik"; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url(/assets/fonts/rubik-latin-wght-normal.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: "Frank Ruhl Libre"; font-style: normal; font-display: swap; font-weight: 700;
-  src: url(/assets/fonts/frank-ruhl-libre-hebrew-700-normal.woff2) format("woff2");
+@font-face { font-family: "Assistant"; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url(/assets/fonts/assistant-hebrew-wght-normal.woff2) format("woff2");
   unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
-@font-face { font-family: "Frank Ruhl Libre"; font-style: normal; font-display: swap; font-weight: 900;
-  src: url(/assets/fonts/frank-ruhl-libre-hebrew-900-normal.woff2) format("woff2");
-  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
-@font-face { font-family: "Frank Ruhl Libre"; font-style: normal; font-display: swap; font-weight: 700;
-  src: url(/assets/fonts/frank-ruhl-libre-latin-700-normal.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: "Frank Ruhl Libre"; font-style: normal; font-display: swap; font-weight: 900;
-  src: url(/assets/fonts/frank-ruhl-libre-latin-900-normal.woff2) format("woff2");
+@font-face { font-family: "Assistant"; font-style: normal; font-display: swap; font-weight: 200 900;
+  src: url(/assets/fonts/assistant-latin-wght-normal.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /* ---------- tokens ---------- */
@@ -40,8 +36,8 @@
   --amber: #eb9429;
   --blue: #33519e;
 
-  --serif: "Frank Ruhl Libre", "Times New Roman", serif;
-  --sans: "Heebo", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --display: "Rubik", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --sans: "Assistant", -apple-system, "Segoe UI", system-ui, sans-serif;
 
   --wrap: 72rem;
   --measure: 40rem;
@@ -65,7 +61,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 1.0625rem/1.7 var(--sans);
+  font: 400 1.125rem/1.65 var(--sans);
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
@@ -76,7 +72,7 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em;
 a:hover { color: #fff; }
 :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
 ::selection { background: var(--red); color: #fff; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 900; line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.005em; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.015em; text-wrap: balance; }
 h2 { font-size: clamp(1.9rem, 4.2vw, 3.1rem); }
 h3 { font-size: 1.25rem; font-weight: 700; }
 p { margin: 0 0 1em; text-wrap: pretty; }
@@ -155,7 +151,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 .brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font-weight: 700; letter-spacing: .01em; }
 .brand__mark { inline-size: 1.7rem; block-size: 1.7rem; color: var(--ink); }
-.brand__word { font: 700 1.15rem/1 var(--sans); }
+.brand__word { font: 600 1.15rem/1 var(--display); letter-spacing: -.01em; }
 .nav { display: flex; gap: .3rem; margin-inline-start: auto; }
 .nav a, .lang {
   font-size: .95rem; color: var(--dim); text-decoration: none; padding: .45rem .75rem; border-radius: 999px;
@@ -192,53 +188,57 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   display: grid; align-items: end;
 }
 .hero__layer { will-change: transform; }
-.hero__media { position: absolute; inset: -10% 0 -14%; z-index: -3; }
+/* No overscan needed: the media only ever moves down (lags the scroll), and
+   the strip it uncovers is above the fold by then. Keeping it at 100% means
+   the bars in the film stay their filmed size, left of the headline. */
+.hero__media { position: absolute; inset: 0; z-index: -3; }
+/* Desktop: push the film a little past the left edge so the bars keep clear
+   of the copy on the right. */
+@media (min-width: 701px) { .hero__media { left: -10%; } }
 .hero__media picture, .hero__poster, .hero__video {
-  position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 40% 50%;
+  position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 0% 50%;
 }
 .hero__video { opacity: 0; transition: opacity .9s var(--ease-out); }
 .hero__video.is-playing { opacity: 1; }
 .hero__veil {
   position: absolute; inset: 0; z-index: -2; pointer-events: none;
   background:
-    linear-gradient(to left, rgb(11 13 18 / .86) 0%, rgb(11 13 18 / .55) 38%, rgb(11 13 18 / 0) 70%),
-    linear-gradient(to top, var(--bg) 0%, rgb(11 13 18 / .2) 30%, rgb(11 13 18 / 0) 55%),
-    linear-gradient(to bottom, rgb(11 13 18 / .55), rgb(11 13 18 / 0) 18%);
+    linear-gradient(to left, rgb(11 13 18 / .55) 0%, rgb(11 13 18 / .25) 40%, rgb(11 13 18 / 0) 65%),
+    linear-gradient(to top, var(--bg) 0%, rgb(11 13 18 / .15) 26%, rgb(11 13 18 / 0) 50%),
+    linear-gradient(to bottom, rgb(11 13 18 / .5), rgb(11 13 18 / 0) 16%);
 }
 /* The driver's hands sit on the left of the frame in both languages, so the
    copy block always sits on the right; only its text alignment follows the
    language direction. */
 .hero__content {
   position: relative; z-index: 1;
-  inline-size: min(100% - 2 * var(--gutter), 38rem);
+  inline-size: min(100% - 2 * var(--gutter), 31rem);
   margin-block: 0 clamp(5.5rem, 14vh, 9rem);
   margin-left: auto; margin-right: max(var(--gutter), (100% - var(--wrap)) / 2 + var(--gutter));
 }
 .hero__title {
-  font-size: clamp(2.7rem, 6.6vw, 5.6rem); line-height: 1.02; margin-bottom: 1.4rem;
+  font-size: clamp(2.5rem, 5.4vw, 4.8rem); line-height: 1.02; margin-bottom: 1.4rem;
   text-shadow: 0 2px 40px rgb(0 0 0 / .45);
 }
 .hero__title span { display: block; }
-:lang(en) .hero__title { font-size: clamp(2.6rem, 5.2vw, 4.6rem); }
-:lang(en) .hero__content { inline-size: min(100% - 2 * var(--gutter), 40rem); }
-.hero__title span + span { color: transparent; -webkit-text-stroke: 0; background: linear-gradient(90deg, #fff, #f3c9a0 60%, var(--amber)); -webkit-background-clip: text; background-clip: text; }
-[dir="rtl"] .hero__title span + span { background: linear-gradient(270deg, #fff, #f3c9a0 60%, var(--amber)); -webkit-background-clip: text; background-clip: text; }
+:lang(en) .hero__title { font-size: clamp(2.3rem, 4vw, 3.8rem); }
+:lang(en) .hero__content { inline-size: min(100% - 2 * var(--gutter), 33rem); }
+.hero__title span + span { color: transparent; -webkit-text-stroke: 0; background: linear-gradient(90deg, #fff, #ffc9cc 55%, #ff6b73); -webkit-background-clip: text; background-clip: text; }
+[dir="rtl"] .hero__title span + span { background: linear-gradient(270deg, #fff, #ffc9cc 55%, #ff6b73); -webkit-background-clip: text; background-clip: text; }
 .hero .eyebrow { text-shadow: 0 1px 12px rgb(0 0 0 / .9), 0 0 2px rgb(0 0 0 / .8); }
 .hero__lede { color: #d4d5db; font-size: clamp(1.05rem, 1.5vw, 1.2rem); max-width: 34rem; text-shadow: 0 1px 20px rgb(0 0 0 / .6); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin-top: 1.8rem; }
 
-/* mid layer: a dashboard-style level strip, the product's visual language */
-.hero__strip {
-  position: absolute; left: 3%; right: 50%; bottom: 22%; z-index: -1; block-size: 5.5rem;
-  display: flex; align-items: center; justify-content: center; gap: clamp(4px, .9vw, 12px);
-  pointer-events: none; opacity: .55;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
+/* mid layer: two soft brand glows that drift at their own depth */
+.hero__glow { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.hero__glow i { position: absolute; border-radius: 50%; filter: blur(40px); }
+.hero__glow i:first-child {
+  inline-size: 46vmax; block-size: 46vmax; right: -12vmax; bottom: -18vmax;
+  background: radial-gradient(closest-side, rgb(217 51 61 / .55), rgb(217 51 61 / 0));
 }
-.hero__strip i {
-  inline-size: 3px; block-size: 100%; border-radius: 3px; flex: none;
-  background: linear-gradient(to top, rgb(244 244 246 / .55), rgb(235 148 41 / .75) 70%, var(--red));
-  transform: scaleY(var(--h)); transform-origin: 50% 50%;
+.hero__glow i:last-child {
+  inline-size: 26vmax; block-size: 26vmax; left: 6vw; top: 18%;
+  background: radial-gradient(closest-side, rgb(235 148 41 / .16), rgb(235 148 41 / 0));
 }
 .hero__pause {
   position: absolute; z-index: 2; inset-block-end: 1.6rem; inset-inline-end: var(--gutter);
@@ -256,12 +256,14 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .hero__cue i { inline-size: 1px; block-size: 2.4rem; background: linear-gradient(var(--ink), transparent); transform-origin: top; }
 @media (max-width: 700px) {
   .hero { align-items: end; }
-  .hero__media picture, .hero__poster, .hero__video { object-position: 32% 50%; }
+  /* Phone: the film becomes a band across the top, the copy sits below it. */
+  .hero__media { inset: 0 0 auto; block-size: 56%; }
+  .hero__media::after { content: ""; position: absolute; inset: auto 0 0; block-size: 45%; background: linear-gradient(to top, var(--bg), rgb(11 13 18 / 0)); }
+  .hero__media picture, .hero__poster, .hero__video { object-position: 0% 50%; }
   .hero__veil, [dir="ltr"] .hero__veil {
-    background: linear-gradient(to top, var(--bg) 4%, rgb(11 13 18 / .82) 42%, rgb(11 13 18 / .25) 70%, rgb(11 13 18 / .5));
+    background: linear-gradient(to bottom, rgb(11 13 18 / .45), rgb(11 13 18 / 0) 14%);
   }
   .hero__content { margin-inline: var(--gutter); inline-size: auto; margin-bottom: 6rem; }
-  .hero__strip { left: auto; right: auto; inset-inline-start: 0; inset-inline-end: 4.5rem; top: auto; bottom: 1.6rem; opacity: .45; block-size: 2.6rem; }
   .hero__cue { display: none; }
 }
 
@@ -365,7 +367,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .stats { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 4vw, 3rem); margin-block: 2rem; flex-wrap: wrap; }
 .stat { display: grid; justify-items: center; text-align: center; gap: .3rem; }
 .stat__label { font-size: .9rem; color: var(--dim); }
-.stat__num { font: 900 clamp(3.4rem, 9vw, 6.5rem)/1 var(--serif); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.stat__num { font: 700 clamp(3.4rem, 9vw, 6.5rem)/1 var(--display); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
 .stat__num small { font: 600 .3em/1 var(--sans); color: var(--dim); letter-spacing: 0; }
 .stat--before .stat__num { color: #6f727e; }
 .stat--after .stat__num { background: linear-gradient(180deg, #fff, #ffb0b4); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -381,7 +383,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .feature-list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 1.6rem 2rem; }
 @media (min-width: 620px) { .feature-list { grid-template-columns: 1fr 1fr; } }
 .feature-list li { padding-top: 1.1rem; border-top: 1px solid var(--line); }
-.feature-list h3 { font: 700 1.08rem/1.3 var(--sans); margin-bottom: .35rem; }
+.feature-list h3 { font: 600 1.1rem/1.3 var(--display); margin-bottom: .35rem; }
 .feature-list p { color: var(--dim); font-size: .98rem; margin: 0; }
 .phones { position: relative; block-size: clamp(30rem, 62vw, 40rem); }
 .phone {
@@ -475,7 +477,7 @@ span[dir="ltr"] { white-space: nowrap; }
 .tiers { display: grid; gap: 1rem; margin-block: 1.5rem 1rem; }
 @media (min-width: 720px) { .tiers { grid-template-columns: repeat(3, 1fr); margin-inline: calc(-1 * clamp(0px, (100vw - var(--measure)) / 2 - var(--gutter), 8rem)); } }
 .tier { padding: 1.4rem; border-radius: var(--radius); background: var(--raised); border: 1px solid var(--line); }
-.tier h3 { font: 700 1.2rem/1.2 var(--sans); margin: 0 0 .6rem; }
+.tier h3 { font: 600 1.2rem/1.2 var(--display); margin: 0 0 .6rem; }
 .tier p { font-size: .97rem; margin: 0; }
 .tier--accent { background: linear-gradient(160deg, #2a1418, var(--raised)); border-color: rgb(217 51 61 / .4); }
 .note { color: var(--mute) !important; font-size: .92rem; }
@@ -494,7 +496,7 @@ span[dir="ltr"] { white-space: nowrap; }
   display: grid; justify-items: center; text-align: center; border-top: 1px solid var(--line);
 }
 .post-end__mark { inline-size: 3rem; block-size: 3rem; color: var(--ink); }
-.post-end__tag { font: 700 1.3rem/1.3 var(--serif); margin: 1rem 0 0; }
+.post-end__tag { font: 700 1.3rem/1.3 var(--display); margin: 1rem 0 0; }
 .post-end .hero__actions { justify-content: center; }
 .more-posts { max-width: calc(52rem + 2 * var(--gutter)); margin: 3rem auto 0; padding-inline: var(--gutter); }
 .reviews { display: grid; gap: 1.2rem; }
@@ -519,7 +521,7 @@ span[dir="ltr"] { white-space: nowrap; }
 }
 @media (min-width: 900px) { .site-footer__inner { grid-template-columns: 1.1fr 1fr 1fr; } }
 .site-footer__brand .brand__mark { inline-size: 2.4rem; block-size: 2.4rem; }
-.site-footer__tag { font: 700 1.25rem/1.35 var(--serif); margin: 1rem 0 1.2rem; max-width: 18rem; }
+.site-footer__tag { font: 700 1.25rem/1.35 var(--display); margin: 1rem 0 1.2rem; max-width: 18rem; }
 .site-footer__nav { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 1.5rem; align-content: start; }
 .site-footer__nav a { color: var(--dim); text-decoration: none; font-size: .95rem; padding-block: .2rem; }
 .site-footer__nav a:hover { color: var(--ink); }
@@ -548,7 +550,7 @@ span[dir="ltr"] { white-space: nowrap; }
       animation-range: entry 30% cover 45%, exit 10% exit 60%;
     }
   }
-  html:not(.reduce-motion) .hero__strip i { animation: eq 2.6s var(--ease-in-out) infinite alternate; animation-delay: calc(var(--d) * -.27s); }
+  html:not(.reduce-motion) .hero__glow i:first-child { animation: breathe 9s var(--ease-in-out) infinite alternate; }
   html:not(.reduce-motion) .hero__cue i { animation: cue 2.2s var(--ease-in-out) infinite; }
   /* The headline is the LCP element: it moves in but is never invisible. */
   html:not(.reduce-motion) .hero__title span { animation: settle var(--dur-3) var(--ease-out) both; }
@@ -571,7 +573,7 @@ span[dir="ltr"] { white-space: nowrap; }
 @keyframes step-out { from { opacity: 1; } to { opacity: 0; transform: translateY(-30px); } }
 @keyframes settle { from { transform: translateY(14px); } to { transform: none; } }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-@keyframes eq { from { transform: scaleY(calc(var(--h) * .55)); } to { transform: scaleY(var(--h)); } }
+@keyframes breathe { from { opacity: .7; transform: scale(.94); } to { opacity: 1; transform: scale(1.04); } }
 @keyframes cue { 0% { transform: scaleY(0); opacity: 1; } 70% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {

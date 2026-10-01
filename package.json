@@ -17,7 +17,9 @@
   "homepage": "https://github.com/amitsagy/levelcast#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "@fontsource-variable/assistant": "^5.3.0",
     "@fontsource-variable/heebo": "^5.3.0",
+    "@fontsource-variable/rubik": "^5.3.0",
     "@fontsource/frank-ruhl-libre": "^5.3.0",
     "esbuild": "^0.28.2",
     "gsap": "^3.15.0",

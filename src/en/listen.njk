@@ -2,11 +2,11 @@
 key: listen
 permalink: /en/listen/
 title: "Hear the difference — LevelCast"
-description: "A real minute of a Hebrew podcast, before and after levelling. The gap between speakers dropped from 7.1 dB to 2.9 dB, and the overall level went up."
+description: "A real minute of a Hebrew podcast, before and after levelling. The gap between speakers dropped from 7.1 dB to 2.9 dB, and the overall level actually went up."
 layout: layouts/doc.njk
 eyebrow: "The demo"
-heading: "Hear the difference"
-lede: "The same minute, twice. The moment the guest starts talking, notice how hard you have to work in the first version, and how little in the second."
+heading: "The same minute, twice"
+lede: "Wait for the moment the guest starts talking. In the first version you have to strain to hear them, and in the second you don't."
 bodyClass: is-listen
 ---
 {% set T = t[lang] %}
@@ -19,20 +19,20 @@ bodyClass: is-listen
 </div>
 
 <h2>What you're hearing</h2>
-<p>A real minute of a Hebrew podcast, with no editing on our side. The second version went through the same code that runs in the app, with the same settings, and nothing else about it changed.</p>
-<p>The best way to hear it: press play, wait for the guest to start talking, and switch between the versions without stopping. The player carries on from the exact same second.</p>
+<p>This is a real minute of a Hebrew podcast, and we didn't edit it at all. The second version went through the same code that runs in the app, with the same settings, and nothing else in it was changed.</p>
+<p>Press play, wait for the guest to start talking, and then switch between the versions without stopping. The player carries on from the exact same second, so you hear the difference right away.</p>
 
 <h2>What the numbers mean</h2>
-<p><strong>The gap between speakers</strong> is the difference between the quiet and the loud parts of this minute. In the original it is <span dir="ltr">7.1 dB</span>. After levelling it is <span dir="ltr">2.9 dB</span>. That gap is what sends your hand to the knob.</p>
-<p><strong>The overall level</strong> went up, from <span dir="ltr">-20.7 dBFS</span> to <span dir="ltr">-18.1 dBFS</span>. That number matters because there is a cheap way to close a gap: turn everything down. The opposite happened here. The quiet voice came up, so the episode as a whole sounds louder, not softer.</p>
+<p><strong>The gap between speakers</strong> is the difference between the quiet parts and the loud parts of this minute. In the original it's <span dir="ltr">7.1 dB</span>, and after levelling <span dir="ltr">2.9 dB</span>. This gap is the reason your hand goes to the knob.</p>
+<p><strong>The overall level</strong> went up. Before levelling it was <span dir="ltr">-20.7 dBFS</span>, and after it <span dir="ltr">-18.1 dBFS</span>. This number is worth checking, because the easy way to close a gap is to turn everything down. Here the opposite happened. The quiet voice came up, so the whole episode sounds louder.</p>
 
 <figure class="figure">
   <picture>
     <source srcset="/assets/img/studio-800.webp 800w, /assets/img/studio-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 900px" type="image/webp">
     <img src="/assets/img/studio-1600.jpg" width="1600" height="1067" alt="Two microphones on a table in a dark studio: one large and close, one small and far away" loading="lazy" decoding="async">
   </picture>
-  <figcaption>Two voices, two microphones, two distances. That's where the gap comes from.</figcaption>
+  <figcaption>Each speaker comes with their own microphone and distance, and that's where the gap starts.</figcaption>
 </figure>
 
 <h2>Why the gap exists at all</h2>
-<p>The host sits in the studio, close to a good microphone. The guest sometimes joins from another room, on another microphone, or over a remote call. Editing evens out the episode as a whole, but it leaves the gap inside the conversation. <a href="{{ collections.byKey.how[lang] }}">Here's how the app deals with it</a>.</p>
+<p>The host sits in the studio, close to a good microphone. The guest sometimes joins from another room, on another microphone, or over a remote call. Editing evens out the episode as a whole, but the gap inside the conversation stays. <a href="{{ collections.byKey.how[lang] }}">This is how the app deals with it</a>.</p>

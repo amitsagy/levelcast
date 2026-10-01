@@ -3,8 +3,8 @@
 {%- set L = collections.byKey -%}
 
 {#- HERO. Three depths, all transform-only (see main.js > parallax):
-    back  = the filmed night drive (moves slowest),
-    mid   = a dashboard-style level strip (the product's language),
+    back  = the brand film: the app icon's glass bars, live then levelling,
+    mid   = a soft crimson glow that drifts at its own depth,
     front = the headline (moves fastest and fades). -#}
 <section class="hero" data-hero>
   <div class="hero__layer hero__media" data-depth="0.38">
@@ -20,9 +20,7 @@
     </video>
   </div>
   <div class="hero__veil" aria-hidden="true"></div>
-  <div class="hero__layer hero__strip" data-depth="0.14" aria-hidden="true">
-    {%- for i in range(0, 48) %}<i style="--h:{{ [0.18,0.62,0.22,0.9,0.3,0.75,0.2,0.55,0.28,0.95,0.24,0.68][i % 12] }};--d:{{ (i * 37) % 11 }}"></i>{% endfor %}
-  </div>
+  <div class="hero__layer hero__glow" data-depth="0.16" aria-hidden="true"><i></i><i></i></div>
   <div class="hero__layer hero__content" data-depth="-0.18">
     <p class="eyebrow">{{ c.eyebrow }}</p>
     <h1 class="hero__title"><span>{{ c.h1[0] }}</span> <span>{{ c.h1[1] }}</span></h1>
