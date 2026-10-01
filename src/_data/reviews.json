@@ -1,0 +1,6 @@
+{
+  "_note": "Filled by scripts/fetch-reviews.mjs from Apple's public customer-review feed once the app is live. The page stays hidden (noindex, no nav, no sitemap) until `published` is set to true with Amit's approval.",
+  "published": false,
+  "fetchedAt": "2026-10-01T09:52:57.558Z",
+  "items": []
+}

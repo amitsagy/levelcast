@@ -1,0 +1,29 @@
+{#- Reviews from the App Store. Hidden until there are real ones and Amit has
+    approved publishing them: noindex, not in the nav, not in the sitemap.
+    Data: src/_data/reviews.json, written by scripts/fetch-reviews.mjs. -#}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">{{ c.eyebrow }}</p>
+    <h1>{{ c.h }}</h1>
+    <p class="lede">{{ c.lede }}</p>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="wrap">
+    {%- set items = reviews.items %}
+    {%- if items.length %}
+    <div class="reviews">
+      {%- for r in items %}
+      <figure class="review reveal">
+        <p class="review__stars" aria-label="{{ r.rating }}/5">{% for i in range(0, r.rating) %}★{% endfor %}<span>{% for i in range(r.rating, 5) %}★{% endfor %}</span></p>
+        {%- if r.title %}<h2 class="review__title" dir="auto">{{ r.title }}</h2>{% endif %}
+        <blockquote dir="auto">{{ r.body }}</blockquote>
+        <figcaption>{{ r.author }} · {{ c.source }} ({{ r.country | upper }})</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="empty">{{ c.empty }}</p>
+    {%- endif %}
+  </div>
+</section>

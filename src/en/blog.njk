@@ -1,0 +1,21 @@
+---
+key: blog
+permalink: /en/blog/
+title: "Blog — LevelCast"
+description: "Why podcasts jump in volume, what editing fixes and what it doesn't, and what exactly was measured in the demo. The LevelCast blog."
+---
+{%- set T = t[lang] %}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Blog</p>
+    <h1>Why it happens, and what to do about it</h1>
+    <p class="lede">On the gap between host and guest, what happens to a voice on its way from the studio to the car, and the numbers behind the demo.</p>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="wrap cards cards--list">
+    {%- for p in collections.posts_en %}
+    {% include "partials/post-card.njk" %}
+    {%- endfor %}
+  </div>
+</section>

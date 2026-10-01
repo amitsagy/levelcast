@@ -1,0 +1,186 @@
+{
+  "he": {
+    "title": "LevelCast — פודקאסטים בעוצמה אחידה, בלי לגעת בווליום",
+    "description": "המנחה מדבר חזק, האורח עונה בשקט, והיד חוזרת לכפתור. LevelCast מיישר בין הדוברים בזמן אמת, על האייפון, תוך כדי נהיגה. בקרוב באפ סטור.",
+    "eyebrow": "אפליקציית פודקאסטים לאייפון",
+    "h1": [
+      "עוצמה אחידה,",
+      "בלי לגעת בווליום"
+    ],
+    "lede": "המנחה מדבר חזק, האורח עונה בשקט, והיד חוזרת לכפתור כל שתי דקות. האפליקציה מיישרת בין הדוברים בזמן אמת, על הטלפון, תוך כדי נהיגה.",
+    "pauseVideo": "לעצור את הווידאו",
+    "playVideo": "להפעיל את הווידאו",
+    "scroll": "גללו",
+    "storyLabel": "מה קורה לעוצמה במהלך פרק",
+    "steps": [
+      {
+        "n": "01",
+        "h": "המנחה מדבר חזק. האורח עונה בשקט.",
+        "p": "מיקרופון אחר, חדר אחר, לפעמים חיבור מרחוק. כל קול מגיע לפרק בעוצמה משלו."
+      },
+      {
+        "n": "02",
+        "h": "מגבירים בשביל האורח. ואז המנחה חוזר, וזה צועק.",
+        "p": "אז מנמיכים, ואז שוב מגבירים. ככה עובר פרק שלם, יד אחת על ההגה ויד אחת על הכפתור."
+      },
+      {
+        "n": "03",
+        "h": "האפליקציה מיישרת ביניהם בזמן אמת.",
+        "p": "מי שמדבר בשקט עולה, מי שמדבר חזק מתרסן. העיבוד רץ על הטלפון, בזמן שהפרק מתנגן."
+      },
+      {
+        "n": "04",
+        "h": "וכל הנסיעה, בלי לגעת בווליום.",
+        "p": "שתי ידיים על ההגה, והפרק נשמע כמו שיחה אחת."
+      }
+    ],
+    "proofEyebrow": "ההוכחה",
+    "proofH": "ההבדל, באוזניים",
+    "proofP": "אותה דקה מתוך פודקאסט עברי, פעמיים. החליפו בין הגרסאות באמצע ושימו לב מה קורה ברגע שהאורח מתחיל לדבר.",
+    "proofNote": "והעוצמה הכוללת עלתה: <span dir=\"ltr\">-20.7 dBFS</span> לפני, <span dir=\"ltr\">-18.1 dBFS</span> אחרי. היישור לא מנמיך את הפרק, הוא מקרב בין הדוברים.",
+    "proofMore": "איך הדקה הזאת נמדדה",
+    "featEyebrow": "מה עוד יש בפנים",
+    "featH": "נבנה בשביל מי שמקשיב בדרך",
+    "features": [
+      {
+        "h": "דילוג על הפתיח",
+        "p": "מזהה איפה המוזיקה נגמרת והתוכן מתחיל, ומציע לדלג."
+      },
+      {
+        "h": "השוואת קצב בין דוברים",
+        "p": "מי שמדבר לאט מואץ מעט, מי שמדהיר מואט. מהירות אחת שמרגישה נכון לשניהם."
+      },
+      {
+        "h": "לכידת רגע",
+        "p": "החזקה של כפתור האחורה שבהגה שומרת את מה שנאמר עכשיו, עם תמלול, לשליחה אחרי שעוצרים."
+      },
+      {
+        "h": "תמלול על הטלפון",
+        "p": "הפרק מתומלל תוך כדי האזנה, ואפשר לחפש בו מילה. במכשירים שתומכים בזיהוי דיבור בשפת הפרק."
+      },
+      {
+        "h": "הורדה לפני הדרך",
+        "p": "פרקים יורדים ברקע ומתנגנים גם בלי קליטה."
+      },
+      {
+        "h": "טיימר שינה",
+        "p": "נדעך בסוף במקום לנתק באמצע משפט."
+      }
+    ],
+    "featMore": "כל היכולות",
+    "shots": [
+      {
+        "src": "player",
+        "alt": "מסך הנגן של LevelCast עם פרק מהתוכנית הבדיונית שני מיקרופונים"
+      },
+      {
+        "src": "levelling",
+        "alt": "בחירת עוצמת היישור: כבוי, רגיל או חזק"
+      },
+      {
+        "src": "moments",
+        "alt": "תיבת הרגעים: קטע שנלכד עם התמלול שלו"
+      }
+    ],
+    "privEyebrow": "בלי שרת באמצע",
+    "privH": "האודיו לא עובר דרכנו",
+    "privP": "האפליקציה מוצאת את הפרק בפיד הפתוח של המפיק ומנגנת אותו ישירות מהשרת שלו. העיבוד רץ על הטלפון. אין חשבון, אין שרת שמאחסן פרקים, ואין מה לדלוף.",
+    "privMore": "איך זה עובד",
+    "blogEyebrow": "מהבלוג",
+    "blogH": "למה זה קורה, ומה עושים עם זה",
+    "endH": "וכל הנסיעה, בלי לגעת בווליום.",
+    "endP": "אפליקציית פודקאסטים לאייפון, בעברית ובאנגלית. מוצאת תוכניות בספרייה של Apple, ומקבלת גם פידים שמדביקים ידנית."
+  },
+  "en": {
+    "title": "LevelCast — Podcasts at an even volume, without touching the knob",
+    "description": "The host is loud, the guest is quiet, and your hand keeps going back to the volume. LevelCast evens out the speakers in real time, on your iPhone, while you drive. Coming soon to the App Store.",
+    "eyebrow": "A podcast app for iPhone",
+    "h1": [
+      "An even volume,",
+      "hands off the knob"
+    ],
+    "lede": "The host is loud, the guest answers quietly, and your hand goes back to the volume every two minutes. LevelCast evens out the speakers in real time, on your phone, while you drive.",
+    "pauseVideo": "Pause the video",
+    "playVideo": "Play the video",
+    "scroll": "Scroll",
+    "storyLabel": "What happens to the volume during an episode",
+    "steps": [
+      {
+        "n": "01",
+        "h": "The host is loud. The guest answers quietly.",
+        "p": "A different mic, a different room, sometimes a remote line. Every voice arrives at its own level."
+      },
+      {
+        "n": "02",
+        "h": "You turn it up for the guest. Then the host is back, shouting.",
+        "p": "So you turn it down, then up again. A whole episode goes by with one hand on the wheel and one on the knob."
+      },
+      {
+        "n": "03",
+        "h": "LevelCast evens them out in real time.",
+        "p": "Whoever speaks quietly comes up, whoever is loud is held back. The processing runs on your phone while the episode plays."
+      },
+      {
+        "n": "04",
+        "h": "And the whole drive, hands off the knob.",
+        "p": "Both hands on the wheel, and the episode sounds like one conversation."
+      }
+    ],
+    "proofEyebrow": "The proof",
+    "proofH": "Hear the difference",
+    "proofP": "The same minute of a Hebrew podcast, twice. Switch between the versions mid-way and listen to what happens the moment the guest starts talking.",
+    "proofNote": "And the overall level went up, from <span dir=\"ltr\">-20.7</span> to <span dir=\"ltr\">-18.1 dBFS</span>. Levelling doesn't turn the episode down. It brings the speakers closer together.",
+    "proofMore": "How this minute was measured",
+    "featEyebrow": "What else is inside",
+    "featH": "Built for listening on the road",
+    "features": [
+      {
+        "h": "Intro skip",
+        "p": "Finds where the music ends and the talking starts, and offers to skip ahead."
+      },
+      {
+        "h": "Pace matching",
+        "p": "A slow speaker is sped up a little, a fast one slowed down. One speed that feels right for both."
+      },
+      {
+        "h": "Capture a moment",
+        "p": "Hold the back button on your steering wheel to keep what was just said, with a transcript, to send once you've stopped."
+      },
+      {
+        "h": "On-device transcript",
+        "p": "The episode is transcribed as you listen, and you can search it for a word. On devices that support speech recognition in the episode's language."
+      },
+      {
+        "h": "Download before you go",
+        "p": "Episodes download in the background and play without signal."
+      },
+      {
+        "h": "Sleep timer",
+        "p": "Fades out at the end instead of cutting off mid-sentence."
+      }
+    ],
+    "featMore": "All features",
+    "shots": [
+      {
+        "src": "player",
+        "alt": "The LevelCast player showing an episode of the fictional show Two Microphones"
+      },
+      {
+        "src": "levelling",
+        "alt": "Choosing the levelling strength: off, normal or strong"
+      },
+      {
+        "src": "moments",
+        "alt": "The moments inbox: a captured clip with its transcript"
+      }
+    ],
+    "privEyebrow": "No server in the middle",
+    "privH": "The audio never passes through us",
+    "privP": "LevelCast finds the episode in the producer's open feed and plays it straight from their server. The processing runs on your phone. No account, no server storing episodes, nothing to leak.",
+    "privMore": "How it works",
+    "blogEyebrow": "From the blog",
+    "blogH": "Why it happens, and what to do about it",
+    "endH": "And the whole drive, hands off the knob.",
+    "endP": "A podcast app for iPhone, in Hebrew and English. It finds shows in Apple's podcast directory, and takes feeds you paste in by hand."
+  }
+}

@@ -1,0 +1,31 @@
+---
+key: about
+permalink: /en/about/
+title: "Our story — LevelCast"
+description: "LevelCast started on a morning drive, with a Hebrew podcast and a hand that never left the volume knob. The principles it's built on."
+layout: layouts/doc.njk
+eyebrow: "Our story"
+heading: "It started on a morning drive"
+lede: "A Hebrew podcast on the way to work, a host with a good microphone, a guest who sounds far away, and a hand that never leaves the volume knob."
+---
+<figure class="figure">
+  <picture>
+    <source srcset="/assets/img/knob-800.webp 800w, /assets/img/knob-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 900px" type="image/webp">
+    <img src="/assets/img/knob-1600.jpg" width="1600" height="1067" alt="Fingers turning the volume knob on a car dashboard at night" loading="lazy" decoding="async">
+  </picture>
+</figure>
+
+<p>Anyone who listens to podcasts in the car knows the move. The host talks, you turn it up for the guest, the host comes back shouting, you turn it down. After enough drives like that, one simple question was left: why doesn't the player do this itself?</p>
+<p>The answer was that most players treat an episode as one unit. They can set its level, but they don't notice that two people inside it are talking at two different levels. LevelCast was built for exactly that gap.</p>
+
+<h2>What it's built on</h2>
+<ul class="checks">
+  <li><strong>The processing happens on the phone.</strong> Levelling, intro detection and pace matching run on the device while the episode plays.</li>
+  <li><strong>No account and no server in the middle.</strong> The audio comes straight from the producer's server, and whatever you save stays on your phone.</li>
+  <li><strong>Producers' content stays theirs.</strong> No copy, no proxy, and downloads are counted on their side. <a href="{{ collections.byKey.producers[lang] }}">More for producers</a>.</li>
+  <li><strong>Numbers only when we measured them.</strong> The figures on this site come from measuring a real minute, <a href="{{ collections.byKey.listen[lang] }}">and you can listen to it</a>.</li>
+</ul>
+
+<h2>Who builds it</h2>
+<p>LevelCast is built in Israel by Amit Sagy, for iPhone, in Hebrew and English. It's coming soon to the App Store.</p>
+<p>A question, a suggestion, or a show worth trying it with? <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>

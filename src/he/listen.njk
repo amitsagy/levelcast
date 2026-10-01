@@ -1,0 +1,38 @@
+---
+key: listen
+permalink: /listen/
+title: "להאזין להבדל — LevelCast"
+description: "דקה אמיתית מתוך פודקאסט עברי, לפני ואחרי היישור. הפער בין הדוברים ירד מ-7.1 dB ל-2.9 dB, והעוצמה הכוללת עלתה."
+layout: layouts/doc.njk
+eyebrow: "ההדגמה"
+heading: "ההבדל, באוזניים"
+lede: "אותה דקה, פעמיים. ברגע שהאורח מתחיל לדבר, שימו לב כמה צריך להתאמץ בגרסה הראשונה, וכמה לא צריך בשנייה."
+bodyClass: is-listen
+---
+{% set T = t[lang] %}
+<div class="wide">{% include "partials/ab-player.njk" %}</div>
+
+<div class="stats">
+  <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">7.1<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+  <div class="stat__arrow" aria-hidden="true"><svg viewBox="0 0 48 16"><path d="M2 8h42M36 2l8 6-8 6"/></svg></div>
+  <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">2.9<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+</div>
+
+<h2>מה שומעים כאן</h2>
+<p>דקה אמיתית מתוך פודקאסט עברי, בלי שום עריכה מצדנו. הגרסה השנייה עברה דרך אותו קוד שרץ באפליקציה, באותן הגדרות, ושום דבר אחר לא השתנה בה.</p>
+<p>הדרך הכי טובה לשמוע את זה: להפעיל, לחכות שהאורח יתחיל לדבר, ולעבור בין הגרסאות בלי לעצור. הנגן ממשיך מאותה שנייה בדיוק.</p>
+
+<h2>מה אומרים המספרים</h2>
+<p><strong>הפער בין הדוברים</strong> הוא ההפרש בין החלקים השקטים לחזקים בדקה הזאת. בגרסה המקורית הוא <span dir="ltr">7.1 dB</span>. אחרי היישור הוא <span dir="ltr">2.9 dB</span>. זה הפער שגורם ליד ללכת לכפתור.</p>
+<p><strong>העוצמה הכוללת</strong> עלתה: <span dir="ltr">-20.7 dBFS</span> לפני היישור, <span dir="ltr">-18.1 dBFS</span> אחריו. המספר הזה חשוב כי יש דרך זולה לסגור פער: להנמיך את הכול. כאן קרה ההפך. הקול השקט עלה, ולכן הפרק כולו נשמע חזק יותר ולא חלש יותר.</p>
+
+<figure class="figure">
+  <picture>
+    <source srcset="/assets/img/studio-800.webp 800w, /assets/img/studio-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 900px" type="image/webp">
+    <img src="/assets/img/studio-1600.jpg" width="1600" height="1067" alt="שני מיקרופונים על שולחן באולפן חשוך: אחד גדול וקרוב, ואחד קטן ורחוק" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>שני קולות, שני מיקרופונים, שני מרחקים. ככה נולד הפער.</figcaption>
+</figure>
+
+<h2>למה הפער קיים מלכתחילה</h2>
+<p>המנחה יושב באולפן, קרוב למיקרופון טוב. האורח מגיע לפעמים מחדר אחר, ממיקרופון אחר, או בשיחה מרחוק. העריכה מיישרת את הפרק בכללותו, אבל את הפער בתוך השיחה היא משאירה. <a href="{{ collections.byKey.how[lang] }}">כך האפליקציה מטפלת בזה</a>.</p>

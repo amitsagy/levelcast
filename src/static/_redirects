@@ -1,0 +1,6 @@
+/index.html      /             301
+/support.html    /support/     301
+/producers.html  /producers/   301
+/privacy.html    /privacy/     301
+/terms.html      /terms/       301
+/levelcast/*     /:splat       301

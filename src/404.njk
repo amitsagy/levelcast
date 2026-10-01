@@ -1,0 +1,21 @@
+---
+permalink: /404.html
+lang: he
+dir: rtl
+key: notfound
+layout: layouts/page.njk
+noindex: true
+title: "העמוד לא נמצא — LevelCast"
+description: "העמוד שחיפשתם לא קיים."
+---
+<section class="notfound">
+  <div class="wrap">
+    {% set cls = "notfound__mark" %}{% include "partials/mark.njk" %}
+    <h1>הפער הזה גדול מדי.</h1>
+    <p class="lede">העמוד שחיפשתם לא קיים, או שעבר מקום.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="/">לדף הבית</a>
+      <a class="btn btn--ghost" href="/en/" lang="en">Back to the English site</a>
+    </div>
+  </div>
+</section>

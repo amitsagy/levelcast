@@ -1,0 +1,15 @@
+{%- set org = { "@type": "Organization", "@id": site.url + "/#org", "name": "LevelCast", "url": site.url + "/", "logo": site.url + "/icon-512.png", "email": site.email } -%}
+{%- set web = { "@type": "WebSite", "@id": site.url + "/#web", "name": "LevelCast", "url": site.url + "/", "inLanguage": ["he", "en"], "publisher": { "@id": site.url + "/#org" } } -%}
+{%- set graph = [org, web] -%}
+{%- if key == 'home' -%}
+{%- set _ = graph.push({ "@type": "MobileApplication", "name": "LevelCast", "operatingSystem": "iOS 17.0 or later", "applicationCategory": "MultimediaApplication", "description": description, "inLanguage": lang, "image": site.url + "/icon-512.png", "publisher": { "@id": site.url + "/#org" } }) -%}
+{%- endif -%}
+{%- if isPost -%}
+{%- set _ = graph.push({ "@type": "BlogPosting", "headline": heading or title, "description": description, "datePublished": page.date | isoDate, "dateModified": page.date | isoDate, "inLanguage": lang, "mainEntityOfPage": page.url | absolute(site.url), "image": (ogImage or ('/assets/img/og-' + lang + '.jpg')) | absolute(site.url), "author": { "@type": "Organization", "name": "LevelCast" }, "publisher": { "@id": site.url + "/#org" } }) -%}
+{%- endif -%}
+{%- if faq -%}
+{%- set qs = [] -%}
+{%- for f in faq -%}{%- set _ = qs.push({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }) -%}{%- endfor -%}
+{%- set _ = graph.push({ "@type": "FAQPage", "mainEntity": qs }) -%}
+{%- endif %}
+<script type="application/ld+json">{{ { "@context": "https://schema.org", "@graph": graph } | json | safe }}</script>

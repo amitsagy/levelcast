@@ -1,0 +1,165 @@
+{%- set c = home[lang] -%}
+{%- set T = t[lang] -%}
+{%- set L = collections.byKey -%}
+
+{#- HERO. Three depths, all transform-only (see main.js > parallax):
+    back  = the filmed night drive (moves slowest),
+    mid   = a dashboard-style level strip (the product's language),
+    front = the headline (moves fastest and fades). -#}
+<section class="hero" data-hero>
+  <div class="hero__layer hero__media" data-depth="0.38">
+    <picture>
+      <source media="(max-width: 800px)" srcset="/assets/img/hero-poster-960.webp" type="image/webp">
+      <source srcset="/assets/img/hero-poster.webp" type="image/webp">
+      <img class="hero__poster" src="/assets/img/hero-poster.jpg" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+    </picture>
+    <video class="hero__video" data-hero-video autoplay muted loop playsinline disablepictureinpicture
+      poster="/assets/img/hero-poster.webp" aria-hidden="true" tabindex="-1">
+      <source src="/assets/video/hero-720.mp4" type="video/mp4" media="(max-width: 800px)">
+      <source src="/assets/video/hero-1080.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__layer hero__strip" data-depth="0.14" aria-hidden="true">
+    {%- for i in range(0, 48) %}<i style="--h:{{ [0.18,0.62,0.22,0.9,0.3,0.75,0.2,0.55,0.28,0.95,0.24,0.68][i % 12] }};--d:{{ (i * 37) % 11 }}"></i>{% endfor %}
+  </div>
+  <div class="hero__layer hero__content" data-depth="-0.18">
+    <p class="eyebrow">{{ c.eyebrow }}</p>
+    <h1 class="hero__title"><span>{{ c.h1[0] }}</span> <span>{{ c.h1[1] }}</span></h1>
+    <p class="hero__lede">{{ c.lede }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ L.listen[lang] }}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>{{ T.listenCta }}
+      </a>
+      <span class="soon-pill">{{ T.soon }}</span>
+    </div>
+  </div>
+  <button class="hero__pause" type="button" data-hero-pause aria-pressed="false"
+    data-pause="{{ c.pauseVideo }}" data-play="{{ c.playVideo }}" aria-label="{{ c.pauseVideo }}">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><g class="i-pause"><rect x="6.5" y="5" width="4" height="14" rx="1"/><rect x="13.5" y="5" width="4" height="14" rx="1"/></g><path class="i-play" d="M8 5.5v13l11-6.5z"/></svg>
+  </button>
+  <a class="hero__cue" href="#story" aria-label="{{ c.scroll }}"><span>{{ c.scroll }}</span><i></i></a>
+</section>
+
+{#- STORY. The scroll performs the product: seven uneven bars with red peaks
+    (host loud, guest quiet), you turn it up and they clip, then they level
+    and settle into the app icon. Without JS the SVG simply shows the icon. -#}
+<section class="story" id="story" data-story>
+  <div class="story__stage">
+    <div class="story__glow" aria-hidden="true"></div>
+    {% include "partials/meter.njk" %}
+  </div>
+  <ol class="story__steps">
+    {%- for s in c.steps %}
+    <li class="story__step" data-step="{{ loop.index0 }}">
+      <span class="story__n" dir="ltr">{{ s.n }}</span>
+      <h2>{{ s.h }}</h2>
+      <p>{{ s.p }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+{#- PROOF. The real before/after minute with the four measured numbers. -#}
+<section class="proof section" id="listen">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">{{ c.proofEyebrow }}</p>
+      <h2>{{ c.proofH }}</h2>
+      <p class="section__lede">{{ c.proofP }}</p>
+    </header>
+    <div class="reveal">{% include "partials/ab-player.njk" %}</div>
+    <div class="stats reveal">
+      <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">7.1<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+      <div class="stat__arrow" aria-hidden="true"><svg viewBox="0 0 48 16"><path d="M2 8h42M36 2l8 6-8 6"/></svg></div>
+      <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">2.9<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+    </div>
+    <p class="proof__note reveal">{{ c.proofNote | safe }}</p>
+    <p class="reveal"><a class="link-arrow" href="{{ L.listen[lang] }}">{{ c.proofMore }}</a></p>
+  </div>
+</section>
+
+{#- FEATURES. Real simulator captures of the fictional show, floating at
+    three depths. -#}
+<section class="features section">
+  <div class="wrap features__grid">
+    <div class="features__copy">
+      <header class="section__head reveal">
+        <p class="eyebrow">{{ c.featEyebrow }}</p>
+        <h2>{{ c.featH }}</h2>
+      </header>
+      <ul class="feature-list">
+        {%- for f in c.features %}
+        <li class="reveal"><h3>{{ f.h }}</h3><p>{{ f.p }}</p></li>
+        {%- endfor %}
+      </ul>
+      <p class="reveal"><a class="link-arrow" href="{{ L.how[lang] }}">{{ c.featMore }}</a></p>
+    </div>
+    <div class="phones" aria-label="{{ c.featEyebrow }}">
+      {%- set depths = ["0.12", "-0.1", "0.26"] %}
+      {%- for s in c.shots %}
+      <figure class="phone phone--{{ loop.index }}" data-depth="{{ depths[loop.index0] }}">
+        <picture>
+          <source srcset="/assets/img/app/{{ s.src }}-400.webp 400w, /assets/img/app/{{ s.src }}-660.webp 660w" sizes="(max-width: 800px) 42vw, 300px" type="image/webp">
+          <img src="/assets/img/app/{{ s.src }}-660.jpg" width="660" height="1434" alt="{{ s.alt }}" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- PRIVACY. Speaker grille behind, drifting slower than the text. -#}
+<section class="band band--grille">
+  <div class="band__bg" data-depth="0.3" aria-hidden="true">
+    <picture>
+      <source media="(max-width: 800px)" srcset="/assets/img/grille-800.webp" type="image/webp">
+      <source srcset="/assets/img/grille-1600.webp" type="image/webp">
+      <img src="/assets/img/grille-1600.jpg" width="1600" height="1067" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap band__inner reveal">
+    <p class="eyebrow">{{ c.privEyebrow }}</p>
+    <h2>{{ c.privH }}</h2>
+    <p class="section__lede">{{ c.privP }}</p>
+    <a class="link-arrow" href="{{ L.how[lang] }}">{{ c.privMore }}</a>
+  </div>
+</section>
+
+{#- BLOG. Latest three posts in this language. -#}
+{%- set posts = collections['posts_' + lang] %}
+{%- if posts.length %}
+<section class="section blog-teaser">
+  <div class="wrap">
+    <header class="section__head reveal">
+      <p class="eyebrow">{{ c.blogEyebrow }}</p>
+      <h2>{{ c.blogH }}</h2>
+    </header>
+    <div class="cards">
+      {%- for p in posts | head(3) %}
+      {% include "partials/post-card.njk" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- END. Dawn road; the drive is over and nobody touched the knob. -#}
+<section class="band band--dawn">
+  <div class="band__bg" data-depth="0.34" aria-hidden="true">
+    <picture>
+      <source media="(max-width: 800px)" srcset="/assets/img/dawn-800.webp" type="image/webp">
+      <source srcset="/assets/img/dawn-1600.webp" type="image/webp">
+      <img src="/assets/img/dawn-1600.jpg" width="1600" height="905" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap band__inner band__inner--center reveal">
+    {% set cls = "end-mark" %}{% include "partials/mark.njk" %}
+    <h2>{{ c.endH }}</h2>
+    <p class="section__lede">{{ c.endP }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ L.listen[lang] }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>{{ T.listenCta }}</a>
+      <span class="soon-pill">{{ T.soon }}</span>
+    </div>
+  </div>
+</section>

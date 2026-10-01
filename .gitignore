@@ -1,0 +1,15 @@
+node_modules/
+_site/
+raw/
+qa/
+.DS_Store
+.build/
+src/_data/assetHash.json
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+.wrangler/

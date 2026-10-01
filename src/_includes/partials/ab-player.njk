@@ -1,0 +1,35 @@
+{#- A/B demo player. Without JS: two native audio players. With JS it becomes
+    one transport with a switch that swaps versions at the same timestamp,
+    which is the only honest way to hear what levelling does. -#}
+<div class="ab" data-ab>
+  <div class="ab__native">
+    <figure>
+      <figcaption>{{ T.before }} · {{ T.gap }} <span dir="ltr">7.1 dB</span></figcaption>
+      <audio controls preload="none" src="/assets/audio/before.m4a" data-ab-src="before"></audio>
+    </figure>
+    <figure>
+      <figcaption>{{ T.after }} · {{ T.gap }} <span dir="ltr">2.9 dB</span></figcaption>
+      <audio controls preload="none" src="/assets/audio/after.m4a" data-ab-src="after"></audio>
+    </figure>
+  </div>
+  <div class="ab__ui" hidden>
+    <button class="ab__play" type="button" data-ab-play aria-label="{{ T.play }}" data-play="{{ T.play }}" data-pause="{{ T.pause }}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5.5v13l11-6.5z"/><g class="i-pause"><rect x="6.5" y="5" width="4" height="14" rx="1"/><rect x="13.5" y="5" width="4" height="14" rx="1"/></g></svg>
+    </button>
+    <div class="ab__switch" role="radiogroup" aria-label="{{ T.gap }}">
+      <button type="button" role="radio" aria-checked="true" data-ab-pick="before">
+        <span class="ab__name">{{ T.before }}</span>
+        <span class="ab__val" dir="ltr">7.1 dB</span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" data-ab-pick="after">
+        <span class="ab__name">{{ T.after }}</span>
+        <span class="ab__val" dir="ltr">2.9 dB</span>
+      </button>
+    </div>
+    <div class="ab__track" data-ab-track>
+      <div class="ab__wave" aria-hidden="true">{% for i in range(0, 64) %}<i style="--b:{{ wave.before[i] }};--a:{{ wave.after[i] }}"></i>{% endfor %}<span class="ab__head" data-ab-head></span></div>
+      <input class="ab__seek" type="range" min="0" max="60" step="0.1" value="0" aria-label="{{ T.gap }}" data-ab-seek>
+      <span class="ab__time" dir="ltr" data-ab-time>0:00 / 1:00</span>
+    </div>
+  </div>
+</div>

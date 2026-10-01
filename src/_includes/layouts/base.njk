@@ -1,0 +1,120 @@
+{%- set T = t[lang] -%}
+{%- set twins = collections.byKey[key] or {} -%}
+{%- set other = T.otherLangCode -%}
+{%- set otherUrl = twins[other] or ('/' if other == 'he' else '/en/') -%}
+{%- set canonical = page.url | absolute(site.url) -%}
+{%- set ogImg = (ogImage or ('/assets/img/og-' + lang + '.jpg')) | absolute(site.url) -%}
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ dir }}" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+{%- if noindex %}
+<meta name="robots" content="noindex, nofollow">
+{%- else %}
+<link rel="canonical" href="{{ canonical }}">
+{%- if twins.he and twins.en %}
+<link rel="alternate" hreflang="he" href="{{ twins.he | absolute(site.url) }}">
+<link rel="alternate" hreflang="en" href="{{ twins.en | absolute(site.url) }}">
+<link rel="alternate" hreflang="x-default" href="{{ twins.he | absolute(site.url) }}">
+{%- endif %}
+{%- endif %}
+<meta name="theme-color" content="{{ site.themeColor }}">
+<meta name="color-scheme" content="dark">
+<meta property="og:site_name" content="LevelCast">
+<meta property="og:type" content="{{ 'article' if isPost else 'website' }}">
+<meta property="og:locale" content="{{ T.locale }}">
+<meta property="og:title" content="{{ ogTitle or title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ ogImg }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ T.tagline }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ogTitle or title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ ogImg }}">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+{%- if lang == 'he' %}
+<link rel="preload" href="/assets/fonts/heebo-hebrew-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/frank-ruhl-libre-hebrew-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+{%- else %}
+<link rel="preload" href="/assets/fonts/heebo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/frank-ruhl-libre-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+{%- endif %}
+<script>
+  /* Runs before paint: marks JS as available and applies the visitor's
+     "reduce motion" choice so nothing animates for a frame first. */
+  (function (d) {
+    var c = d.documentElement.classList; c.remove("no-js"); c.add("js");
+    try { if (localStorage.getItem("lc-motion") === "reduce") c.add("reduce-motion"); } catch (e) {}
+  })(document);
+</script>
+<link rel="stylesheet" href="/assets/build/main.css?v={{ assetHash.css }}">
+<script type="module" src="/assets/build/main.js?v={{ assetHash.js }}"></script>
+{%- include "partials/jsonld.njk" %}
+</head>
+<body class="page-{{ key }}{% if bodyClass %} {{ bodyClass }}{% endif %}">
+<a class="skip" href="#main">{{ T.skip }}</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="brand" href="{{ '/' if lang == 'he' else '/en/' }}" aria-label="LevelCast, {{ T.home }}">
+      {% set cls = "brand__mark" %}{% include "partials/mark.njk" %}
+      <span class="brand__word">LevelCast</span>
+    </a>
+    <nav class="nav" aria-label="{{ T.menu }}">
+      {%- for item in T.nav %}
+      {%- set href = collections.byKey[item.key][lang] %}
+      <a href="{{ href }}"{% if key == item.key or (isPost and item.key == 'blog') %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {%- endfor %}
+    </nav>
+    <a class="lang" href="{{ otherUrl }}" hreflang="{{ other }}" lang="{{ other }}">{{ T.otherLang }}</a>
+    <details class="menu">
+      <summary aria-label="{{ T.menu }}"><span></span><span></span></summary>
+      <nav class="menu__panel" aria-label="{{ T.menu }}">
+        {%- for item in T.nav %}
+        <a href="{{ collections.byKey[item.key][lang] }}"{% if key == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {%- endfor %}
+        <a class="menu__lang" href="{{ otherUrl }}" hreflang="{{ other }}" lang="{{ other }}">{{ T.otherLang }}</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      {% set cls = "brand__mark" %}{% include "partials/mark.njk" %}
+      <p class="site-footer__tag">{{ T.tagline }}</p>
+      <p class="soon-pill">{{ T.soon }}</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="{{ T.menu }}">
+      {%- for item in T.nav %}
+      <a href="{{ collections.byKey[item.key][lang] }}">{{ item.label }}</a>
+      {%- endfor %}
+      {%- for item in T.footerNav %}
+      <a href="{{ collections.byKey[item.key][lang] }}">{{ item.label }}</a>
+      {%- endfor %}
+      <a href="{{ otherUrl }}" hreflang="{{ other }}" lang="{{ other }}">{{ T.otherLang }}</a>
+    </nav>
+    <div class="site-footer__meta">
+      <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false"
+        data-on="{{ T.motionOn }}" data-off="{{ T.motionOff }}">{{ T.motionOn }}</button>
+      <p>{{ T.apple }}</p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a> · © 2026 LevelCast</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+---
+{#- Long-form text pages: privacy, terms, producers, support, story.
+    A quiet header band with the page title, then a single readable column. -#}
+<article class="doc">
+  <header class="doc__head">
+    <p class="eyebrow">{{ eyebrow }}</p>
+    <h1>{{ heading or title }}</h1>
+    {%- if lede %}<p class="lede">{{ lede }}</p>{% endif %}
+    {%- if updated %}<p class="updated">{{ updated }}</p>{% endif %}
+  </header>
+  <div class="prose">
+{{ content | safe }}
+  </div>
+</article>

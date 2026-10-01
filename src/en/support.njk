@@ -1,0 +1,40 @@
+---
+key: support
+permalink: /en/support/
+title: "Support — LevelCast"
+description: "Common questions about LevelCast: cancelling and restoring a subscription, an episode that can't be found, levelling you can't hear, capturing a moment and transcripts. And how to reach us."
+layout: layouts/doc.njk
+eyebrow: "Support"
+heading: "How can we help"
+lede: "A question, a problem or a suggestion? Write to us and we'll get back to you."
+faq:
+  - q: "How do I cancel a subscription?"
+    a: "In your iPhone settings: tap your name at the top, then Subscriptions, then LevelCast. You can also do it from the app: Settings, LevelCast Pro, Manage subscription. After you cancel, the subscription runs until the end of the period you paid for."
+  - q: "I subscribed on another device and don't see it here"
+    a: "The plans screen has Restore purchases. Make sure you're signed in with the same Apple ID you bought with."
+  - q: "An episode can't be found"
+    a: "LevelCast plays podcasts from the producer's public feed. If a show doesn't come up in search, you can paste its feed address or a link to an episode."
+  - q: "I can't hear the levelling"
+    a: "Levelling works when there's a gap between the speakers. In an episode where everyone already talks at the same level, there isn't much to fix. You can choose the strength with the levelling button in the player, and Strong makes a bigger difference."
+  - q: "How do I capture a moment?"
+    a: "Hold the back button on your steering wheel, or tap Capture the moment in the player. The clip is saved with a transcript in the Moments tab of your library, and you can send it from there. You can change the steering-wheel gesture in Settings."
+  - q: "The transcript doesn't appear"
+    a: "Transcription uses iOS speech recognition and depends on your device supporting the episode's language. Live transcript, in-episode search and key points are part of the Pro AI plan."
+  - q: "Does it work without signal?"
+    a: "A downloaded episode plays without signal, levelling included. Search and episodes you haven't downloaded need a connection."
+  - q: "Which devices?"
+    a: "iPhone with iOS 17 or later."
+---
+<p class="contact-card"><a href="mailto:{{ site.email }}"><strong>{{ site.email }}</strong></a></p>
+
+<h2>Common questions</h2>
+<div class="faq">
+{%- for f in faq %}
+  <details>
+    <summary>{{ f.q }}</summary>
+    <p>{{ f.a }}</p>
+  </details>
+{%- endfor %}
+</div>
+
+<p>Producing a podcast? There's <a href="{{ collections.byKey.producers[lang] }}">a page for you</a>.</p>

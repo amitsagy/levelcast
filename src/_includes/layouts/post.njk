@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+---
+{%- set T = t[lang] -%}
+{%- set posts = collections['posts_' + lang] -%}
+<article class="doc post">
+  <header class="doc__head">
+    <p class="eyebrow"><a href="{{ collections.byKey.blog[lang] }}">{{ t[lang].nav[3].label }}</a></p>
+    <h1>{{ heading or title }}</h1>
+    <p class="lede">{{ description }}</p>
+    <p class="updated"><time datetime="{{ page.date | isoDate }}">{{ page.date | dateHe if lang == 'he' else page.date | dateEn }}</time> · {{ content | readMinutes }} {{ T.minutes }}</p>
+  </header>
+  <div class="prose">
+{{ content | safe }}
+  </div>
+  <aside class="post-end">
+    {% set cls = "post-end__mark" %}{% include "partials/mark.njk" %}
+    <p class="post-end__tag">{{ T.tagline }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ collections.byKey.listen[lang] }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>{{ T.listenCta }}</a>
+      <span class="soon-pill">{{ T.soon }}</span>
+    </div>
+  </aside>
+  {%- set more = [] %}
+  {%- for p in posts %}{% if p.url != page.url %}{% set _ = more.push(p) %}{% endif %}{% endfor %}
+  {%- if more.length %}
+  <nav class="more-posts" aria-label="{{ T.allPosts }}">
+    <div class="cards">
+      {%- for p in more | head(2) %}
+      {% include "partials/post-card.njk" %}
+      {%- endfor %}
+    </div>
+  </nav>
+  {%- endif %}
+</article>

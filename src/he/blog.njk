@@ -1,0 +1,21 @@
+---
+key: blog
+permalink: /blog/
+title: "הבלוג — LevelCast"
+description: "למה פודקאסטים קופצים בעוצמה, מה העריכה פותרת ומה לא, ומה בדיוק נמדד בהדגמה. הבלוג של LevelCast."
+---
+{%- set T = t[lang] %}
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">בלוג</p>
+    <h1>למה זה קורה, ומה עושים עם זה</h1>
+    <p class="lede">על הפער בין המנחה לאורח, על מה שקורה לקול בדרך מהאולפן לרכב, ועל המספרים שמאחורי ההדגמה.</p>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="wrap cards cards--list">
+    {%- for p in collections.posts_he %}
+    {% include "partials/post-card.njk" %}
+    {%- endfor %}
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<article class="card reveal">
+  <a class="card__link" href="{{ p.url }}">
+    <p class="card__meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | dateHe if lang == 'he' else p.date | dateEn }}</time> · {{ p.templateContent | readMinutes }} {{ T.minutes }}</p>
+    <h3 class="card__title">{{ p.data.heading or p.data.title }}</h3>
+    <p class="card__desc">{{ p.data.description }}</p>
+    <span class="card__more">{{ T.readMore }}</span>
+  </a>
+</article>
