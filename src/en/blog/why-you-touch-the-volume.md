@@ -5,7 +5,7 @@ date: 2026-10-01
 permalink: /en/blog/why-you-touch-the-volume/
 title: "Why podcasts make you reach for the volume — LevelCast blog"
 heading: "Why podcasts make you reach for the volume"
-description: "The host is loud, the guest answers quietly, and you turn it up and down all the way. Why this happens in almost every two-person podcast, and why editing doesn't fix it."
+description: "The host is loud, the guest answers quietly, and you turn it up and down the whole drive. Why this happens in almost every two-person podcast, and why editing doesn't fix it."
 ---
 In every podcast with two people there's a moment when your hand leaves the wheel. The host talks loudly, the guest answers quietly, you turn it up, and then the host comes back and it's shouting.
 

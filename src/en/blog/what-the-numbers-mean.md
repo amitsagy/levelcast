@@ -15,7 +15,7 @@ The gap between speakers is the difference between the quiet parts of the minute
 
 In the original version the gap is <span dir="ltr">7.1 dB</span>. After levelling it's <span dir="ltr">2.9 dB</span>.
 
-A decibel is a relative scale, not an ordinary one-two-three scale. It's built so that small differences in the number are very noticeable differences to the ear. That's why the drop from <span dir="ltr">7.1</span> to <span dir="ltr">2.9</span> sounds much bigger than it looks on paper. The first gap is the kind that sends your hand to the knob. The second is a difference the ear accepts as a natural part of a conversation: two people, two voices, but in the same room.
+A decibel is a logarithmic scale: each step is a ratio between two levels, not a fixed amount added on. So the drop from <span dir="ltr">7.1</span> to <span dir="ltr">2.9</span> can't be read like a drop in price. The difference in actual level between the two gaps is much larger than the difference between the numbers suggests. The first gap is the kind that sends your hand to the knob. The second is a difference the ear accepts as a natural part of a conversation: two people, two voices, but in the same room.
 
 ## The other two: the overall level
 

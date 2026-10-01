@@ -56,7 +56,7 @@
     try { if (localStorage.getItem("lc-motion") === "reduce") c.add("reduce-motion"); } catch (e) {}
   })(document);
 </script>
-<link rel="stylesheet" href="/assets/build/main.css?v={{ assetHash.css }}">
+<style>{{ inlineCss | safe }}</style>
 <script type="module" src="/assets/build/main.js?v={{ assetHash.js }}"></script>
 {%- include "partials/jsonld.njk" %}
 </head>

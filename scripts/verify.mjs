@@ -49,6 +49,21 @@ const links = new Set();
   await ctx.close();
 }
 
+/* 1b. Phone width: no page may be wider than the screen (a wide decoration
+   makes mobile browsers zoom out and push the menu off screen). */
+{
+  const ctx = await browser.newContext(devices["iPhone 14 Pro"]);
+  const page = await ctx.newPage();
+  const wide = [];
+  for (const path of [...pages, "/reviews/", "/en/reviews/", "/404.html"]) {
+    await page.goto(base + path, { waitUntil: "load" });
+    const w = await page.evaluate(() => [document.documentElement.scrollWidth, window.innerWidth]);
+    if (w[0] > 393 || w[1] > 393) wide.push(`${path} ${w[0]}/${w[1]}`);
+  }
+  ok(wide.length === 0, `phone width: no page overflows 393px${wide.length ? ": " + wide.join(", ") : ""}`);
+  await ctx.close();
+}
+
 /* 2. Links: every internal link and asset resolves. */
 {
   const internal = [...links].filter((l) => l.startsWith(base) && !l.includes("#"));
@@ -67,7 +82,7 @@ for (const [name, opts] of [["desktop", { viewport: { width: 1440, height: 900 }
   for (const path of ["/", "/en/"]) {
     const ctx = await browser.newContext(opts);
     const page = await ctx.newPage();
-    await page.goto(base + path, { waitUntil: "networkidle" });
+    await page.goto(base + path, { waitUntil: "load" });
     await page.waitForTimeout(1500);
     const v = await page.evaluate(() => {
       const el = document.querySelector("[data-hero-video]");
@@ -104,7 +119,7 @@ for (const [name, opts] of [["desktop", { viewport: { width: 1440, height: 900 }
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: "reduce" });
   const page = await ctx.newPage();
-  await page.goto(base + "/", { waitUntil: "networkidle" });
+  await page.goto(base + "/", { waitUntil: "load" });
   await page.waitForTimeout(1000);
   const r0 = await page.evaluate(() => ({ paused: document.querySelector("[data-hero-video]").paused, m: getComputedStyle(document.querySelector(".hero__media")).transform }));
   await page.evaluate(() => window.scrollTo(0, innerHeight * 0.6));
@@ -118,12 +133,12 @@ for (const [name, opts] of [["desktop", { viewport: { width: 1440, height: 900 }
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await ctx.newPage();
-  await page.goto(base + "/", { waitUntil: "networkidle" });
+  await page.goto(base + "/", { waitUntil: "load" });
   await page.click("[data-motion-toggle]");
   await page.waitForTimeout(300);
   await page.evaluate(() => window.scrollTo(0, 0));
   const st = await page.evaluate(() => ({ cls: document.documentElement.classList.contains("reduce-motion"), paused: document.querySelector("[data-hero-video]").paused, stored: localStorage.getItem("lc-motion") }));
-  await page.reload({ waitUntil: "networkidle" });
+  await page.reload({ waitUntil: "load" });
   const after = await page.evaluate(() => document.documentElement.classList.contains("reduce-motion"));
   ok(st.cls && st.paused && st.stored === "reduce" && after, "motion switch: turns motion off, pauses video, persists across reload");
   await ctx.close();
@@ -133,7 +148,7 @@ for (const [name, opts] of [["desktop", { viewport: { width: 1440, height: 900 }
 {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await ctx.newPage();
-  await page.goto(base + "/listen/", { waitUntil: "networkidle" });
+  await page.goto(base + "/listen/", { waitUntil: "load" });
   await page.click("[data-ab-play]");
   await page.waitForTimeout(1500);
   await page.click('[data-ab-pick="after"]');

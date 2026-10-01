@@ -20,7 +20,7 @@ for (const r of runs) {
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
-  await page.goto(base + path, { waitUntil: "networkidle" });
+  await page.goto(base + path, { waitUntil: "load" });
   await page.waitForTimeout(1200);
   const h = await page.evaluate(() => document.documentElement.scrollHeight);
   const vh = r.opts.viewport.height;

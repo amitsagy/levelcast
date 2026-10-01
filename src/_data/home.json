@@ -1,7 +1,7 @@
 {
   "he": {
-    "title": "LevelCast — פודקאסטים בעוצמה אחידה, בלי לגעת בווליום",
-    "description": "המנחה מדבר חזק, האורח עונה בשקט, והיד חוזרת לכפתור. LevelCast מיישר בין הדוברים בזמן אמת, על האייפון, תוך כדי נהיגה. בקרוב באפ סטור.",
+    "title": "LevelCast — פודקאסטים בעוצמה אחידה",
+    "description": "המנחה מדבר חזק, האורח עונה בשקט. LevelCast מיישר בין הדוברים בזמן אמת, על האייפון, תוך כדי נהיגה. בקרוב באפ סטור.",
     "eyebrow": "אפליקציית פודקאסטים לאייפון",
     "h1": [
       "עוצמה אחידה,",
@@ -55,7 +55,7 @@
         "p": "החזקה של כפתור האחורה שבהגה שומרת את מה שנאמר עכשיו, עם תמלול, לשליחה אחרי שעוצרים."
       },
       {
-        "h": "תמלול על הטלפון",
+        "h": "תמלול תוך כדי האזנה",
         "p": "הפרק מתומלל תוך כדי האזנה, ואפשר לחפש בו מילה. במכשירים שתומכים בזיהוי דיבור בשפת הפרק."
       },
       {
@@ -92,8 +92,8 @@
     "endP": "אפליקציית פודקאסטים לאייפון, בעברית ובאנגלית. מוצאת תוכניות בספרייה של Apple, ומקבלת גם פידים שמדביקים ידנית."
   },
   "en": {
-    "title": "LevelCast — Podcasts at an even volume, without touching the knob",
-    "description": "The host is loud, the guest is quiet, and your hand keeps going back to the volume. LevelCast evens out the speakers in real time, on your iPhone, while you drive. Coming soon to the App Store.",
+    "title": "LevelCast — Podcasts at an even volume",
+    "description": "The host is loud, the guest is quiet. LevelCast evens out the speakers in real time, on your iPhone, while you drive. Coming soon to the App Store.",
     "eyebrow": "A podcast app for iPhone",
     "h1": [
       "An even volume,",
@@ -128,7 +128,7 @@
     ],
     "proofEyebrow": "The proof",
     "proofH": "Hear the difference",
-    "proofP": "The same minute of a Hebrew podcast, twice. Switch between the versions mid-way and listen to what happens the moment the guest starts talking.",
+    "proofP": "The same minute of a Hebrew podcast, twice. Switch between the versions midway and listen to what happens the moment the guest starts talking.",
     "proofNote": "And the overall level went up, from <span dir=\"ltr\">-20.7</span> to <span dir=\"ltr\">-18.1 dBFS</span>. Levelling doesn't turn the episode down. It brings the speakers closer together.",
     "proofMore": "How this minute was measured",
     "featEyebrow": "What else is inside",
@@ -147,7 +147,7 @@
         "p": "Hold the back button on your steering wheel to keep what was just said, with a transcript, to send once you've stopped."
       },
       {
-        "h": "On-device transcript",
+        "h": "Transcript as you listen",
         "p": "The episode is transcribed as you listen, and you can search it for a word. On devices that support speech recognition in the episode's language."
       },
       {

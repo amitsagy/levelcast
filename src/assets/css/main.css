@@ -34,7 +34,7 @@
   --line: #23252f;
   --ink: #f4f4f6;
   --dim: #a7a9b4;
-  --mute: #737683;
+  --mute: #868995;
   --red: #d9333d;
   --red-deep: #b3272f;
   --amber: #eb9429;
@@ -223,6 +223,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 :lang(en) .hero__content { inline-size: min(100% - 2 * var(--gutter), 40rem); }
 .hero__title span + span { color: transparent; -webkit-text-stroke: 0; background: linear-gradient(90deg, #fff, #f3c9a0 60%, var(--amber)); -webkit-background-clip: text; background-clip: text; }
 [dir="rtl"] .hero__title span + span { background: linear-gradient(270deg, #fff, #f3c9a0 60%, var(--amber)); -webkit-background-clip: text; background-clip: text; }
+.hero .eyebrow { text-shadow: 0 1px 12px rgb(0 0 0 / .9), 0 0 2px rgb(0 0 0 / .8); }
 .hero__lede { color: #d4d5db; font-size: clamp(1.05rem, 1.5vw, 1.2rem); max-width: 34rem; text-shadow: 0 1px 20px rgb(0 0 0 / .6); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin-top: 1.8rem; }
 
@@ -435,14 +436,15 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 [dir="ltr"] .page-head { background: radial-gradient(60rem 30rem at 15% -10%, rgb(217 51 61 / .16), transparent 60%); }
 .page-head h1, .doc__head h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); }
 .page-head .lede { max-width: 40rem; }
-.doc { padding-bottom: clamp(5rem, 10vw, 8rem); }
+.doc { position: relative; overflow-x: clip; padding-bottom: clamp(5rem, 10vw, 8rem); }
+.doc::before {
+  content: ""; position: absolute; inset: 0 0 auto; block-size: 40rem; z-index: -1; pointer-events: none;
+  background: radial-gradient(50rem 26rem at 70% 0%, rgb(217 51 61 / .15), transparent 60%);
+}
+[dir="ltr"] .doc::before { background: radial-gradient(50rem 26rem at 30% 0%, rgb(217 51 61 / .15), transparent 60%); }
 .doc__head {
   max-width: calc(var(--measure) + 2 * var(--gutter)); margin-inline: auto;
   padding: clamp(8rem, 16vw, 11rem) var(--gutter) 2.5rem; position: relative;
-}
-.doc__head::before {
-  content: ""; position: absolute; inset: 0 -40vw; z-index: -1; pointer-events: none;
-  background: radial-gradient(50rem 26rem at 70% 0%, rgb(217 51 61 / .15), transparent 60%);
 }
 .updated { color: var(--mute); font-size: .9rem; }
 .prose { max-width: calc(var(--measure) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
@@ -450,6 +452,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .prose h3 { margin-top: 1.8rem; }
 .prose p, .prose li { color: #c9cad2; }
 .prose strong { color: var(--ink); font-weight: 600; }
+span[dir="ltr"] { white-space: nowrap; }
 .prose a { color: var(--ink); text-decoration-color: rgb(235 148 41 / .7); }
 .prose ul { padding-inline-start: 1.2rem; }
 .prose li { margin-bottom: .5rem; }
@@ -546,7 +549,9 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   }
   html:not(.reduce-motion) .hero__strip i { animation: eq 2.6s var(--ease-in-out) infinite alternate; animation-delay: calc(var(--d) * -.27s); }
   html:not(.reduce-motion) .hero__cue i { animation: cue 2.2s var(--ease-in-out) infinite; }
-  html:not(.reduce-motion) .hero__title span, html:not(.reduce-motion) .hero__lede, html:not(.reduce-motion) .hero .eyebrow, html:not(.reduce-motion) .hero__actions {
+  /* The headline is the LCP element: it moves in but is never invisible. */
+  html:not(.reduce-motion) .hero__title span { animation: settle var(--dur-3) var(--ease-out) both; }
+  html:not(.reduce-motion) .hero__lede, html:not(.reduce-motion) .hero .eyebrow, html:not(.reduce-motion) .hero__actions {
     animation: rise var(--dur-3) var(--ease-out) both;
   }
   html:not(.reduce-motion) .hero__title span + span { animation-delay: .08s; }
@@ -563,6 +568,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 @keyframes reveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 @keyframes step-in { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
 @keyframes step-out { from { opacity: 1; } to { opacity: 0; transform: translateY(-30px); } }
+@keyframes settle { from { transform: translateY(14px); } to { transform: none; } }
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes eq { from { transform: scaleY(calc(var(--h) * .55)); } to { transform: scaleY(var(--h)); } }
 @keyframes cue { 0% { transform: scaleY(0); opacity: 1; } 70% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
