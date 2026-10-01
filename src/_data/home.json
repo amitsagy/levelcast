@@ -1,6 +1,6 @@
 {
   "he": {
-    "title": "LevelCast — פודקאסטים בלי לגעת בווליום",
+    "title": "LevelCast | פודקאסטים בלי לגעת בווליום",
     "description": "המנחה מדבר חזק והאורח עונה בשקט. LevelCast מיישרת ביניהם בזמן שהפרק מתנגן, על האייפון עצמו, כך שאפשר לנהוג בלי לגעת בווליום. בקרוב באפ סטור.",
     "eyebrow": "אפליקציית פודקאסטים לאייפון",
     "h1": [
@@ -37,7 +37,7 @@
     "proofEyebrow": "ההדגמה",
     "proofH": "תשמעו בעצמכם",
     "proofP": "דקה מתוך \"שני מיקרופונים\", תוכנית לדוגמה שבה האורחת מחוברת מרחוק ונשמעת שקטה מהמנחה. כדאי לעבור בין הגרסאות בדיוק כשהיא מתחילה לדבר.",
-    "proofNote": "והעוצמה הכוללת דווקא עלתה. לפני היישור היא הייתה <span dir=\"ltr\">-24.9 dBFS</span>, ואחריו <span dir=\"ltr\">-13.7 dBFS</span>. כלומר הפער נסגר בלי להנמיך את הפרק.",
+    "proofNote": "והעוצמה הכוללת דווקא עלתה. לפני היישור היא הייתה <span dir=\"ltr\">{overallBefore} dBFS</span>, ואחריו <span dir=\"ltr\">{overallAfter} dBFS</span>. כלומר הפער נסגר בלי להנמיך את הפרק.",
     "proofMore": "מה בדיוק נמדד בדקה הזאת",
     "featEyebrow": "מה עוד יש בפנים",
     "featH": "ועוד כמה דברים שעוזרים בנסיעה",
@@ -129,7 +129,7 @@
     "proofEyebrow": "The demo",
     "proofH": "Listen for yourself",
     "proofP": "A minute of \"Two Microphones\", a sample show where the guest joins remotely and sounds quieter than the host. Switch between the versions right as she starts talking.",
-    "proofNote": "And the overall level actually went up. Before levelling it was <span dir=\"ltr\">-24.9 dBFS</span>, and after it <span dir=\"ltr\">-13.7 dBFS</span>. So the gap closed without the episode getting quieter.",
+    "proofNote": "And the overall level actually went up. Before levelling it was <span dir=\"ltr\">{overallBefore} dBFS</span>, and after it <span dir=\"ltr\">{overallAfter} dBFS</span>. So the gap closed without the episode getting quieter.",
     "proofMore": "What exactly was measured in this minute",
     "featEyebrow": "What else is inside",
     "featH": "A few more things that help on a drive",

@@ -11,7 +11,7 @@ There are four numbers on this site, and they all come from the same minute. It'
 
 ## The gap between speakers
 
-The gap is the difference between the quiet parts of the minute and the loud parts. In the original version it's <span dir="ltr">8.1 dB</span>, and after levelling <span dir="ltr">2.6 dB</span>. Both times it's the same minute, with the same speakers and the same words. The only thing that changed is the distance between the quiet voice and the loud one.
+The gap is the difference between the quiet parts of the minute and the loud parts. In the original version it's <span dir="ltr">{{ site.demo.gapBefore }} dB</span>, and after levelling <span dir="ltr">{{ site.demo.gapAfter }} dB</span>. Both times it's the same minute, with the same speakers and the same words. The only thing that changed is the distance between the quiet voice and the loud one.
 
 Decibels are a logarithmic scale: each step describes a ratio between two levels. So you compare the two gaps directly rather than subtracting one from the other like prices. In this minute, the first gap is the kind that sends your hand to the knob, and the second isn't.
 
@@ -19,7 +19,7 @@ Decibels are a logarithmic scale: each step describes a ratio between two levels
 
 Here a different unit comes in, dBFS, which measures level relative to the maximum a digital file can hold. Zero is a ceiling you can't go past, so all the values below it are negative. The closer the number is to zero, the louder the sound.
 
-In the original version the overall level of the minute is <span dir="ltr">-24.9 dBFS</span>, and after levelling <span dir="ltr">-13.7 dBFS</span>. So after levelling, the minute is louder.
+In the original version the overall level of the minute is <span dir="ltr">{{ site.demo.overallBefore }} dBFS</span>, and after levelling <span dir="ltr">{{ site.demo.overallAfter }} dBFS</span>. So after levelling, the minute is louder.
 
 ## Why this number matters
 

@@ -6,6 +6,7 @@
   "launched": false,
   "themeColor": "#0d0f14",
   "author": "Amit Sagy",
+  "ownerHe": "עמית שגיא",
   "demo": {
     "gapBefore": "8.1",
     "gapAfter": "2.6",

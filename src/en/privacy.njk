@@ -6,27 +6,32 @@ description: "LevelCast collects no information about you. No account, no sign-u
 layout: layouts/doc.njk
 eyebrow: "Document"
 heading: "Privacy policy"
-updated: "Updated: September 2026. This is a translation; the Hebrew version is the binding one."
+updated: "Updated: October 2026. This is a translation; the Hebrew version is the binding one."
 bodyClass: is-legal
 ---
-<p><strong>LevelCast collects no information about you.</strong> No account, no sign-up, and no server of ours that receives any data. This document is short because there isn't much to say.</p>
+<p><strong>LevelCast collects no information about you.</strong> No account, no sign-up, and no server of ours that receives any data from the app. This document sets out what is stored on your phone, who the app talks to, and what goes out in each request.</p>
+
+<h2>Who we are</h2>
+<p>LevelCast is developed and run by {{ site.author }}, Israel. For any privacy question, write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
 
 <h2>What stays on your device</h2>
-<p>Your library, queue, listening positions, downloaded episodes, captured moments and settings are all stored on your phone only, in the app's folder. They are included in Apple's backup if you turned it on, and are deleted when you delete the app.</p>
+<p>Your library, queue, listening positions, downloaded episodes, transcripts, captured moments and settings are stored on your phone only, in the app's folder, and are deleted when you delete the app.</p>
+<p>If you turned on Apple's backup, it includes your library, moments and settings. Downloaded episodes and transcripts are left out of the backup, because they can be downloaded and transcribed again.</p>
+<p><strong>One exception:</strong> the date the app first ran is kept in the device's keychain, so it remains after the app is deleted. That is what stops the two open weeks from starting over with every install. Only the date is kept, with no identifier and nothing else, and it never leaves the device.</p>
 
 <h2>Who the app talks to</h2>
 <ul>
-  <li><strong>Apple</strong>: searching for shows and the top charts, through the public API.</li>
-  <li><strong>The producer's server</strong>: the RSS feed and the episode's audio file, directly.</li>
-  <li><strong>Spotify</strong>: only if you shared a link, to identify which episode it refers to.</li>
+  <li><strong>Apple</strong>, through its public API: searching for shows, the top charts, and checking for new episodes of the shows you follow. That check sends the identifiers of those shows, on every refresh, including in the background. Cover art comes from there too.</li>
+  <li><strong>The producer's server</strong>: the RSS feed, the episode's audio file and sometimes the cover art, directly.</li>
+  <li><strong>Spotify</strong>: only if you shared a link, to identify which episode it refers to. The link itself is sent. A shortened link is first opened through Spotify's link service.</li>
 </ul>
-<p>In each of these requests your device talks to that server directly. <strong>The audio never passes through us.</strong> We have no proxy, no copy of the episode, and no log of what you listen to.</p>
+<p>In each of these requests your device talks to that server directly. As with any request on the internet, that server sees your device's IP address, and it follows its own privacy policy. <strong>The audio never passes through us.</strong> We have no proxy, no copy of the episode, and no log of what you listen to.</p>
 
 <h2>Audio processing</h2>
 <p>Volume levelling, intro detection and pace matching all run on the phone. No audio sample is sent anywhere.</p>
 
 <h2>Transcription</h2>
-<p>Transcription (live transcript and moment transcripts) uses iOS speech recognition, on the phone, on any device that supports it in the episode's language. On a device without on-device recognition, iOS sends the audio clip to Apple's speech recognition service and returns text. Even then it does not reach us.</p>
+<p>Transcription (live transcript and moment transcripts) uses iOS speech recognition, on the phone only. The app requires on-device recognition, so no audio clip is sent to any service. On a device that can't recognise speech locally in the episode's language, transcription is simply not available.</p>
 
 <h2>Moments you capture</h2>
 <p>The audio clip and the text are stored on the device. They are sent only when you choose to share them, to the destination you choose, through the iOS share sheet.</p>
@@ -37,8 +42,17 @@ bodyClass: is-legal
 <h2>Notifications</h2>
 <p>If you turned on notifications for new episodes, they are created on the device after the feeds refresh. There is no notification server and no token sent to anyone.</p>
 
+<h2>This website</h2>
+<p>The site is hosted by Cloudflare, which receives the usual request details (IP address, browser type) to serve the page and protect it. The site has no cookies, no analytics and no third-party scripts. The "Reduce motion" button stores your choice in your browser only.</p>
+
+<h2>When you write to us</h2>
+<p>An email you send is kept in our mailbox (Gmail) and used only to reply to you. You can ask us to delete it.</p>
+
+<h2>Your rights</h2>
+<p>Under Israel's Privacy Protection Law, you may review information held about you and ask for it to be corrected or deleted. All of the app's data is with you, on your phone, and is deleted with the app. The only information we might hold is an email you sent, and for that it is enough to write to us.</p>
+
 <h2>Children</h2>
-<p>The app is not intended for children under 13 and collects no information from anyone.</p>
+<p>The app plays any public podcast, including adult content. It is not intended for children under 13, and it collects no information from anyone.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the updated version will appear here with a new date.</p>

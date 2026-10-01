@@ -1,8 +1,9 @@
 ---
 key: listen
 permalink: /listen/
-title: "לשמוע את ההבדל — LevelCast"
-description: "דקה מתוכנית לדוגמה, עם אורחת שמחוברת מרחוק, לפני היישור ואחריו. הפער בין הדוברים ירד מ-8.1 dB ל-2.6 dB, והעוצמה הכוללת של הדקה דווקא עלתה."
+title: "לשמוע את ההבדל | LevelCast"
+eleventyComputed:
+  description: "דקה מתוכנית לדוגמה, עם אורחת שמחוברת מרחוק, לפני היישור ואחריו. הפער בין הדוברים ירד מ-{{ site.demo.gapBefore }} dB ל-{{ site.demo.gapAfter }} dB, והעוצמה הכוללת של הדקה דווקא עלתה."
 layout: layouts/doc.njk
 eyebrow: "ההדגמה"
 heading: "אותה דקה, פעמיים"
@@ -24,7 +25,7 @@ bodyClass: is-listen
 
 <h2>מה אומרים המספרים</h2>
 <p><strong>הפער בין הדוברים</strong> הוא ההפרש בין החלקים השקטים לחלקים החזקים בדקה הזאת. במקור הוא <span dir="ltr">{{ site.demo.gapBefore }} dB</span>, ואחרי היישור <span dir="ltr">{{ site.demo.gapAfter }} dB</span>. בגלל הפער הזה היד הולכת לכפתור.</p>
-<p><strong>העוצמה הכוללת</strong> עלתה. לפני היישור היא הייתה <span dir="ltr">-24.9 dBFS</span>, ואחריו <span dir="ltr">-13.7 dBFS</span>. את המספר הזה כדאי לבדוק, כי הדרך הקלה לסגור פער היא פשוט להנמיך את הכול. פה קרה ההפך. הקול השקט עלה, אז הפרק כולו נשמע חזק יותר.</p>
+<p><strong>העוצמה הכוללת</strong> עלתה. לפני היישור היא הייתה <span dir="ltr">{{ site.demo.overallBefore }} dBFS</span>, ואחריו <span dir="ltr">{{ site.demo.overallAfter }} dBFS</span>. את המספר הזה כדאי לבדוק, כי הדרך הקלה לסגור פער היא פשוט להנמיך את הכול. פה קרה ההפך. הקול השקט עלה, אז הפרק כולו נשמע חזק יותר.</p>
 
 <figure class="figure">
   <picture>

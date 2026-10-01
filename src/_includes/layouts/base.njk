@@ -99,7 +99,7 @@
       <p class="site-footer__tag">{{ T.tagline }}</p>
       <p class="soon-pill">{{ T.soon }}</p>
     </div>
-    <nav class="site-footer__nav" aria-label="{{ T.menu }}">
+    <nav class="site-footer__nav" aria-label="{{ T.footerMenu }}">
       {%- for item in T.nav %}
       <a href="{{ collections.byKey[item.key][lang] }}">{{ item.label }}</a>
       {%- endfor %}

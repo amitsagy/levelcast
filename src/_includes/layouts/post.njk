@@ -13,14 +13,14 @@ layout: layouts/base.njk
   <div class="prose">
 {{ content | safe }}
   </div>
-  <aside class="post-end">
+  <div class="post-end">
     {% set cls = "post-end__mark" %}{% include "partials/mark.njk" %}
     <p class="post-end__tag">{{ T.tagline }}</p>
     <div class="hero__actions">
       <a class="btn btn--primary" href="{{ collections.byKey.listen[lang] }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>{{ T.listenCta }}</a>
       <span class="soon-pill">{{ T.soon }}</span>
     </div>
-  </aside>
+  </div>
   {%- set more = [] %}
   {%- for p in posts %}{% if p.url != page.url %}{% set _ = more.push(p) %}{% endif %}{% endfor %}
   {%- if more.length %}

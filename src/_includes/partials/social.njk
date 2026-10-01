@@ -7,7 +7,6 @@
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">{{ 'מהרשתות' if lang == 'he' else 'From our socials' }}</p>
-      <h2>{{ 'הסרטונים הקצרים' if lang == 'he' else 'The short videos' }}</h2>
     </header>
     <div class="social__grid">
       {%- for s in items %}
@@ -19,8 +18,8 @@
           <h3>{{ s[lang].title }}</h3>
           <p>{{ s[lang].caption }}</p>
           <p class="reel__links">
-            {%- if s.links.instagram %}<a href="{{ s.links.instagram }}" rel="noopener" target="_blank">Instagram</a>{% endif %}
-            {%- if s.links.tiktok %}<a href="{{ s.links.tiktok }}" rel="noopener" target="_blank">TikTok</a>{% endif %}
+            {%- if s.links.instagram and s.links.instagram.startsWith('https://') %}<a href="{{ s.links.instagram }}" rel="noopener" target="_blank">Instagram</a>{% endif %}
+            {%- if s.links.tiktok and s.links.tiktok.startsWith('https://') %}<a href="{{ s.links.tiktok }}" rel="noopener" target="_blank">TikTok</a>{% endif %}
           </p>
         </figcaption>
       </figure>

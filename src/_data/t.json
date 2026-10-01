@@ -41,6 +41,10 @@
       {
         "key": "terms",
         "label": "תנאי שימוש"
+      },
+      {
+        "key": "accessibility",
+        "label": "נגישות"
       }
     ],
     "menu": "תפריט",
@@ -61,7 +65,8 @@
     "after": "עם LevelCast",
     "gap": "פער בין הדוברים",
     "play": "לנגן",
-    "pause": "לעצור"
+    "pause": "לעצור",
+    "footerMenu": "קישורים בתחתית העמוד"
   },
   "en": {
     "locale": "en_US",
@@ -105,6 +110,10 @@
       {
         "key": "terms",
         "label": "Terms"
+      },
+      {
+        "key": "accessibility",
+        "label": "Accessibility"
       }
     ],
     "menu": "Menu",
@@ -125,6 +134,7 @@
     "after": "With LevelCast",
     "gap": "Gap between speakers",
     "play": "Play",
-    "pause": "Pause"
+    "pause": "Pause",
+    "footerMenu": "Footer links"
   }
 }

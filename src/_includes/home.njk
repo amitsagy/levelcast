@@ -72,7 +72,7 @@
       <div class="stat__arrow" aria-hidden="true"><svg viewBox="0 0 48 16"><path d="M2 8h42M36 2l8 6-8 6"/></svg></div>
       <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">{{ site.demo.gapAfter }}<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
     </div>
-    <p class="proof__note reveal">{{ c.proofNote | safe }}</p>
+    <p class="proof__note reveal">{{ c.proofNote | replace("{overallBefore}", site.demo.overallBefore) | replace("{overallAfter}", site.demo.overallAfter) | safe }}</p>
     <p class="reveal"><a class="link-arrow" href="{{ L.listen[lang] }}">{{ c.proofMore }}</a></p>
   </div>
 </section>

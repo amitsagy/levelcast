@@ -227,6 +227,11 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .hero__title span + span { color: transparent; -webkit-text-stroke: 0; background: linear-gradient(90deg, #fff, #ffc9cc 55%, #ff6b73); -webkit-background-clip: text; background-clip: text; }
 [dir="rtl"] .hero__title span + span { background: linear-gradient(270deg, #fff, #ffc9cc 55%, #ff6b73); -webkit-background-clip: text; background-clip: text; }
 .hero .eyebrow { text-shadow: 0 1px 12px rgb(0 0 0 / .9), 0 0 2px rgb(0 0 0 / .8); }
+/* On a phone the eyebrow sits on the meter's reflection, where the shadow alone
+   measured 2.3-3:1 against 4.5 required. A dark chip keeps it legible on any frame. */
+@media (max-width: 900px) {
+  .hero .eyebrow { background: rgb(11 13 18 / .9); padding: .45em .7em; border-radius: 999px; }
+}
 .hero__lede { color: #d4d5db; font-size: clamp(1.05rem, 1.5vw, 1.2rem); max-width: 34rem; text-shadow: 0 1px 20px rgb(0 0 0 / .6); }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin-top: 1.8rem; }
 

@@ -56,7 +56,10 @@ export default function (eleventyConfig) {
     return Math.max(1, Math.round(words / 200));
   });
 
-  eleventyConfig.addFilter("json", (v) => JSON.stringify(v));
+  // Escaped so a "</script>" inside any value cannot close the tag it sits in.
+  // The parsed value is unchanged.
+  eleventyConfig.addFilter("json", (v) =>
+    JSON.stringify(v).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026"));
   eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
 
   return {

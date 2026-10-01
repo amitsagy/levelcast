@@ -45,7 +45,7 @@ Do not pass `--force` to wrangler again: the Pages project already exists.
    order: 4                    # tie-breaker when dates are equal
    date: 2026-10-08
    permalink: /blog/<slug>/
-   title: "<heading> — הבלוג של LevelCast"
+   title: "<heading> | LevelCast"     # no em dash in Hebrew copy, titles included
    heading: "<heading>"
    description: "<one or two sentences, 120-170 characters>"
    ```
