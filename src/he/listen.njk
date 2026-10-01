@@ -2,7 +2,7 @@
 key: listen
 permalink: /listen/
 title: "לשמוע את ההבדל — LevelCast"
-description: "דקה אמיתית מפודקאסט בעברית, לפני היישור ואחריו. הפער בין הדוברים ירד מ-7.1 dB ל-2.9 dB, והעוצמה הכוללת של הדקה דווקא עלתה."
+description: "דקה מתוכנית לדוגמה, עם אורחת שמחוברת מרחוק, לפני היישור ואחריו. הפער בין הדוברים ירד מ-8.1 dB ל-2.6 dB, והעוצמה הכוללת של הדקה דווקא עלתה."
 layout: layouts/doc.njk
 eyebrow: "ההדגמה"
 heading: "אותה דקה, פעמיים"
@@ -13,18 +13,18 @@ bodyClass: is-listen
 <div class="wide">{% include "partials/ab-player.njk" %}</div>
 
 <div class="stats">
-  <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">7.1<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+  <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">{{ site.demo.gapBefore }}<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
   <div class="stat__arrow" aria-hidden="true"><svg viewBox="0 0 48 16"><path d="M2 8h42M36 2l8 6-8 6"/></svg></div>
-  <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">2.9<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+  <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">{{ site.demo.gapAfter }}<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
 </div>
 
 <h2>מה שומעים כאן</h2>
-<p>זו דקה אמיתית מפודקאסט בעברית, והיא לא נערכה. הגרסה השנייה עברה דרך אותו קוד שרץ באפליקציה, עם אותן הגדרות, ושום דבר אחר בה לא שונה.</p>
-<p>כדאי ללחוץ על נגן, לחכות שהאורח יתחיל לדבר, ואז לעבור בין הגרסאות בלי לעצור. הנגן ממשיך מאותה שנייה בדיוק, כך שההבדל נשמע מיד.</p>
+<p>זו דקה מתוך "שני מיקרופונים", תוכנית לדוגמה של LevelCast: עידו מנחה מהאולפן, ומאיה מחוברת מרחוק ונשמעת שקטה ממנו, כמו שקורה כשאורח מתחבר מרחוק. הנושא: ללמוד שפה בפקקים. הגרסה השנייה עברה דרך שרשרת היישור של האפליקציה ברמה "חזק", עם אותן הגדרות שיש בטלפון, ושום דבר אחר בה לא שונה.</p>
+<p>כדאי ללחוץ על נגן, לחכות שמאיה תתחיל לדבר, ואז לעבור בין הגרסאות בלי לעצור. הנגן ממשיך מאותה שנייה בדיוק, כך שההבדל נשמע מיד.</p>
 
 <h2>מה אומרים המספרים</h2>
-<p><strong>הפער בין הדוברים</strong> הוא ההפרש בין החלקים השקטים לחלקים החזקים בדקה הזאת. במקור הוא <span dir="ltr">7.1 dB</span>, ואחרי היישור <span dir="ltr">2.9 dB</span>. בגלל הפער הזה היד הולכת לכפתור.</p>
-<p><strong>העוצמה הכוללת</strong> עלתה. לפני היישור היא הייתה <span dir="ltr">-20.7 dBFS</span>, ואחריו <span dir="ltr">-18.1 dBFS</span>. את המספר הזה כדאי לבדוק, כי הדרך הקלה לסגור פער היא פשוט להנמיך את הכול. פה קרה ההפך. הקול השקט עלה, אז הפרק כולו נשמע חזק יותר.</p>
+<p><strong>הפער בין הדוברים</strong> הוא ההפרש בין החלקים השקטים לחלקים החזקים בדקה הזאת. במקור הוא <span dir="ltr">{{ site.demo.gapBefore }} dB</span>, ואחרי היישור <span dir="ltr">{{ site.demo.gapAfter }} dB</span>. בגלל הפער הזה היד הולכת לכפתור.</p>
+<p><strong>העוצמה הכוללת</strong> עלתה. לפני היישור היא הייתה <span dir="ltr">-24.9 dBFS</span>, ואחריו <span dir="ltr">-13.7 dBFS</span>. את המספר הזה כדאי לבדוק, כי הדרך הקלה לסגור פער היא פשוט להנמיך את הכול. פה קרה ההפך. הקול השקט עלה, אז הפרק כולו נשמע חזק יותר.</p>
 
 <figure class="figure">
   <picture>

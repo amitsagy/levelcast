@@ -5,6 +5,10 @@
     "home": "דף הבית",
     "nav": [
       {
+        "key": "home",
+        "label": "דף הבית"
+      },
+      {
         "key": "how",
         "label": "איך זה עובד"
       },
@@ -64,6 +68,10 @@
     "skip": "Skip to content",
     "home": "Home",
     "nav": [
+      {
+        "key": "home",
+        "label": "Home"
+      },
       {
         "key": "how",
         "label": "How it works"

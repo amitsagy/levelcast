@@ -1,0 +1,4 @@
+{
+  "_note": "Social posts shown on the blog page. Only posts Amit approved for publishing go here; the video file is copied into src/assets/social/ at that point, never before. Order: newest first.",
+  "items": []
+}

@@ -76,3 +76,20 @@ animated path checks `prefers-reduced-motion` and the in-page switch
 (`html.reduce-motion`, stored in `localStorage` as `lc-motion`). The SVG meter
 ships in its final state (the app icon), so without JS or with motion off the
 page shows the finished mark.
+
+## Social videos on the blog
+
+`src/_data/social.json` lists Instagram/TikTok posts shown in a "From our socials"
+section at the bottom of `/blog/` and `/en/blog/`. Add a post only after Amit
+approved it for publishing: copy its 720x1280 `display.mp4` and `poster.jpg` from
+`~/levelcast-marketing/marketing/queue/<item>/` into `src/assets/social/` under the
+item id, then add `{ id, date, video, poster, he: {title, caption}, en: {title,
+caption}, links: {instagram, tiktok} }`. The section is hidden while the list is empty.
+
+## The demo minute
+
+`scripts/demo/make-dialogue.mjs` builds the "before" minute from the fictional
+show "שני מיקרופונים" (episode 38, a remote guest about 10 LU under the host).
+`scripts/demo/render-levelling.swift` plays it through the app's audio chain
+(Strong) and prints the four numbers; they live in `src/_data/site.json` →
+`demo`, and must match `.agents/compliance.md` in the marketing repo.

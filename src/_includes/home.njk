@@ -68,9 +68,9 @@
     </header>
     <div class="reveal">{% include "partials/ab-player.njk" %}</div>
     <div class="stats reveal">
-      <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">7.1<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+      <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">{{ site.demo.gapBefore }}<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
       <div class="stat__arrow" aria-hidden="true"><svg viewBox="0 0 48 16"><path d="M2 8h42M36 2l8 6-8 6"/></svg></div>
-      <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">2.9<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+      <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">{{ site.demo.gapAfter }}<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
     </div>
     <p class="proof__note reveal">{{ c.proofNote | safe }}</p>
     <p class="reveal"><a class="link-arrow" href="{{ L.listen[lang] }}">{{ c.proofMore }}</a></p>

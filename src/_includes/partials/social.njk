@@ -1,0 +1,31 @@
+{#- Social posts (Instagram / TikTok) on the blog page. Each item:
+    { id, date, video, poster, he: { title, caption }, en: { title, caption },
+      links: { instagram, tiktok } }. Videos are 9:16 and load only on play. -#}
+{%- set items = social.items %}
+{%- if items.length %}
+<section class="section section--tight social">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">{{ 'מהרשתות' if lang == 'he' else 'From our socials' }}</p>
+      <h2>{{ 'הסרטונים הקצרים' if lang == 'he' else 'The short videos' }}</h2>
+    </header>
+    <div class="social__grid">
+      {%- for s in items %}
+      <figure class="reel reveal">
+        <video class="reel__video" controls playsinline preload="none" poster="/assets/social/{{ s.poster }}" width="720" height="1280">
+          <source src="/assets/social/{{ s.video }}" type="video/mp4">
+        </video>
+        <figcaption>
+          <h3>{{ s[lang].title }}</h3>
+          <p>{{ s[lang].caption }}</p>
+          <p class="reel__links">
+            {%- if s.links.instagram %}<a href="{{ s.links.instagram }}" rel="noopener" target="_blank">Instagram</a>{% endif %}
+            {%- if s.links.tiktok %}<a href="{{ s.links.tiktok }}" rel="noopener" target="_blank">TikTok</a>{% endif %}
+          </p>
+        </figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

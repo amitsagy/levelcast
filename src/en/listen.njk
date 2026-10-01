@@ -2,7 +2,7 @@
 key: listen
 permalink: /en/listen/
 title: "Hear the difference — LevelCast"
-description: "A real minute of a Hebrew podcast, before and after levelling. The gap between speakers dropped from 7.1 dB to 2.9 dB, and the overall level actually went up."
+description: "A minute of a sample show with a remote guest, before and after levelling. The gap between speakers dropped from 8.1 dB to 2.6 dB, and the overall level actually went up."
 layout: layouts/doc.njk
 eyebrow: "The demo"
 heading: "The same minute, twice"
@@ -13,18 +13,18 @@ bodyClass: is-listen
 <div class="wide">{% include "partials/ab-player.njk" %}</div>
 
 <div class="stats">
-  <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">7.1<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+  <div class="stat stat--before"><span class="stat__label">{{ T.before }}</span><span class="stat__num" dir="ltr">{{ site.demo.gapBefore }}<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
   <div class="stat__arrow" aria-hidden="true"><svg viewBox="0 0 48 16"><path d="M2 8h42M36 2l8 6-8 6"/></svg></div>
-  <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">2.9<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
+  <div class="stat stat--after"><span class="stat__label">{{ T.after }}</span><span class="stat__num" dir="ltr">{{ site.demo.gapAfter }}<small> dB</small></span><span class="stat__cap">{{ T.gap }}</span></div>
 </div>
 
 <h2>What you're hearing</h2>
-<p>This is a real minute of a Hebrew podcast, unedited. The second version went through the same code that runs in the app, with the same settings, and nothing else in it was changed.</p>
-<p>Press play, wait for the guest to start talking, and then switch between the versions without stopping. The player carries on from the exact same second, so you hear the difference right away.</p>
+<p>This is a minute of "Two Microphones", a sample show made for LevelCast: Ido hosts from the studio, and Maya joins remotely and sounds quieter than him, the way a remote guest often does. The topic: learning a language in traffic. The second version went through the app's levelling chain at the Strong setting, with the same settings as on the phone, and nothing else in it was changed.</p>
+<p>Press play, wait for Maya to start talking, and then switch between the versions without stopping. The player carries on from the exact same second, so you hear the difference right away.</p>
 
 <h2>What the numbers mean</h2>
-<p><strong>The gap between speakers</strong> is the difference between the quiet parts and the loud parts of this minute. In the original it's <span dir="ltr">7.1 dB</span>, and after levelling <span dir="ltr">2.9 dB</span>. This gap is the reason your hand goes to the knob.</p>
-<p><strong>The overall level</strong> went up. Before levelling it was <span dir="ltr">-20.7 dBFS</span>, and after it <span dir="ltr">-18.1 dBFS</span>. This number is worth checking, because the easy way to close a gap is to turn everything down. Here the opposite happened. The quiet voice came up, so the whole episode sounds louder.</p>
+<p><strong>The gap between speakers</strong> is the difference between the quiet parts and the loud parts of this minute. In the original it's <span dir="ltr">{{ site.demo.gapBefore }} dB</span>, and after levelling <span dir="ltr">{{ site.demo.gapAfter }} dB</span>. This gap is the reason your hand goes to the knob.</p>
+<p><strong>The overall level</strong> went up. Before levelling it was <span dir="ltr">-24.9 dBFS</span>, and after it <span dir="ltr">-13.7 dBFS</span>. This number is worth checking, because the easy way to close a gap is to turn everything down. Here the opposite happened. The quiet voice came up, so the whole episode sounds louder.</p>
 
 <figure class="figure">
   <picture>

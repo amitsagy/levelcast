@@ -156,7 +156,9 @@ for (const [name, opts] of [["desktop", { viewport: { width: 1440, height: 900 }
   const page = await ctx.newPage();
   await page.goto(base + "/listen/", { waitUntil: "load" });
   await page.click("[data-ab-play]");
-  await page.waitForTimeout(1500);
+  // Playback starts once both minutes are in memory; time from that moment.
+  await page.waitForFunction(() => { const e = document.querySelector('[data-ab-src="before"]'); return !e.paused && e.currentTime > 0.1; }, null, { timeout: 15000 });
+  await page.waitForTimeout(1200);
   await page.click('[data-ab-pick="after"]');
   await page.waitForTimeout(300);
   const ab = await page.evaluate(() => {

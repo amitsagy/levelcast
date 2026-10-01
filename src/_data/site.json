@@ -5,5 +5,13 @@
   "appStoreId": "6811838824",
   "launched": false,
   "themeColor": "#0d0f14",
-  "author": "Amit Sagy"
+  "author": "Amit Sagy",
+  "demo": {
+    "gapBefore": "8.1",
+    "gapAfter": "2.6",
+    "overallBefore": "-24.9",
+    "overallAfter": "-13.7",
+    "preset": "strong",
+    "_note": "Measured by scripts/demo/render-levelling.swift on raw/demo/before.wav (the fictional show 'שני מיקרופונים', ep. 38), Strong preset through the app's audio chain."
+  }
 }

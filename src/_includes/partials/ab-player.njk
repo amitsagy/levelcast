@@ -4,11 +4,11 @@
 <div class="ab" data-ab>
   <div class="ab__native">
     <figure>
-      <figcaption>{{ T.before }} · {{ T.gap }} <span dir="ltr">7.1 dB</span></figcaption>
+      <figcaption>{{ T.before }} · {{ T.gap }} <span dir="ltr">{{ site.demo.gapBefore }} dB</span></figcaption>
       <audio controls preload="none" src="/assets/audio/before.m4a" data-ab-src="before"></audio>
     </figure>
     <figure>
-      <figcaption>{{ T.after }} · {{ T.gap }} <span dir="ltr">2.9 dB</span></figcaption>
+      <figcaption>{{ T.after }} · {{ T.gap }} <span dir="ltr">{{ site.demo.gapAfter }} dB</span></figcaption>
       <audio controls preload="none" src="/assets/audio/after.m4a" data-ab-src="after"></audio>
     </figure>
   </div>
@@ -19,11 +19,11 @@
     <div class="ab__switch" role="radiogroup" aria-label="{{ T.gap }}">
       <button type="button" role="radio" aria-checked="true" data-ab-pick="before">
         <span class="ab__name">{{ T.before }}</span>
-        <span class="ab__val" dir="ltr">7.1 dB</span>
+        <span class="ab__val" dir="ltr">{{ site.demo.gapBefore }} dB</span>
       </button>
       <button type="button" role="radio" aria-checked="false" data-ab-pick="after">
         <span class="ab__name">{{ T.after }}</span>
-        <span class="ab__val" dir="ltr">2.9 dB</span>
+        <span class="ab__val" dir="ltr">{{ site.demo.gapAfter }} dB</span>
       </button>
     </div>
     <div class="ab__track" data-ab-track>
