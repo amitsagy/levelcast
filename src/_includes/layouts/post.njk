@@ -5,9 +5,11 @@ layout: layouts/base.njk
 {%- set posts = collections['posts_' + lang] -%}
 <article class="doc post">
   <header class="doc__head">
-    <p class="eyebrow"><a href="{{ collections.byKey.blog[lang] }}">{{ t[lang].nav[3].label }}</a></p>
+    <p class="eyebrow"><a href="{{ collections.byKey.blog[lang] }}">{% for item in T.nav %}{% if item.key == "blog" %}{{ item.label }}{% endif %}{% endfor %}</a></p>
     <h1>{{ heading or title }}</h1>
+    {%- if not hideLede %}
     <p class="lede">{{ description }}</p>
+    {%- endif %}
     <p class="updated"><time datetime="{{ page.date | isoDate }}">{{ page.date | dateHe if lang == 'he' else page.date | dateEn }}</time> · {{ content | readMinutes }} {{ T.minutes }}</p>
   </header>
   <div class="prose">
@@ -18,7 +20,12 @@ layout: layouts/base.njk
     <p class="post-end__tag">{{ T.tagline }}</p>
     <div class="hero__actions">
       <a class="btn btn--primary" href="{{ collections.byKey.listen[lang] }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>{{ T.listenCta }}</a>
+      {%- if related %}{% for item in T.footerNav %}{% if item.key == related %}
+      <a class="btn btn--ghost" href="{{ collections.byKey[related][lang] }}">{{ item.label }}</a>
+      {%- endif %}{% endfor %}{% endif %}
+      {%- if soon !== false %}
       <span class="soon-pill">{{ T.soon }}</span>
+      {%- endif %}
     </div>
   </div>
   {%- set more = [] %}

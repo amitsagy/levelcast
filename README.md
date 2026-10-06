@@ -56,8 +56,12 @@ Do not pass `--force` to wrangler again: the Pages project already exists.
 4. `npm run build && python3 scripts/lint-copy.py`, then deploy. Maya submits;
    nothing goes live without Amit's approval.
 
-While the app is not on the store, posts end with "בקרוב באפ סטור" (the post
-template adds it) and carry no store link. Once there is a store URL, add it to
+While the app is not on the store, posts end with "בקרוב ב-App Store" (the post
+template adds it) and carry no store link. Optional front matter for a post whose
+approved text must show as is: `soon: false` drops the template's availability
+line (post end and footer) when the body already says it, `hideLede: true` keeps
+`description` for meta tags and cards but doesn't print it above the body, and
+`related: <key>` adds a button to that page (label from `footerNav` in `t.json`). Once there is a store URL, add it to
 `src/_data/site.json` and the template with the `?r=blog-<slug>` token.
 
 ## Reviews page (hidden)
