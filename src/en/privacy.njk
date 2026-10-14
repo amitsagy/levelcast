@@ -9,7 +9,7 @@ heading: "Privacy policy"
 updated: "Updated: October 2026. This is a translation; the Hebrew version is the binding one."
 bodyClass: is-legal
 ---
-<p><strong>LevelCast collects no information about you.</strong> No account, no sign-up, and no server of ours that receives any data from the app. This document sets out what is stored on your phone, who the app talks to, and what goes out in each request.</p>
+<p><strong>LevelCast collects no information about you.</strong> This policy applies to both the iPhone and Android apps. Where the two differ, it says so. No account, no sign-up, and no server of ours that receives any data from the app. This document sets out what is stored on your device, who the app talks to, and what goes out in each request.</p>
 
 <h2>Who we are</h2>
 <p>LevelCast is developed and run by {{ site.author }}, Israel. For any privacy question, write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
@@ -18,29 +18,36 @@ bodyClass: is-legal
 <p>Your library, queue, listening positions, downloaded episodes, transcripts, captured moments and settings are stored on your phone only, in the app's folder, and are deleted when you delete the app.</p>
 <p>If you turned on Apple's backup, it includes your library, moments and settings. Downloaded episodes and transcripts are left out of the backup, because they can be downloaded and transcribed again.</p>
 <p><strong>One exception:</strong> the date the app first ran is kept in the device's keychain, so it remains after the app is deleted. That is what stops the two open weeks from starting over with every install. Only the date is kept, with no identifier and nothing else, and it never leaves the device.</p>
+<p>On Android, if the phone's Google backup is on, it includes your library, moments, settings and the date the app first ran. Downloaded episodes and transcripts are left out. The backup is kept in your Google account and we never see it.</p>
+<p>Android has no keychain-like store that survives deletion: the date the app first ran is kept in the app's own file (and in the backup, if it is on), and is deleted with the app.</p>
+<p>On Android, the app stores on the phone the last answer Google Play gave about your subscription (which plan is active and when it was last checked), so the subscription keeps working offline for up to seven days. That file is excluded from backup and never leaves the phone.</p>
 
 <h2>Who the app talks to</h2>
 <ul>
   <li><strong>Apple</strong>, through its public API: searching for shows, the top charts, and checking for new episodes of the shows you follow. That check sends the identifiers of those shows, on every refresh, including in the background. Cover art comes from there too.</li>
   <li><strong>The producer's server</strong>: the RSS feed, the episode's audio file and sometimes the cover art, directly.</li>
   <li><strong>Spotify</strong>: only if you shared a link, to identify which episode it refers to. The link itself is sent. A shortened link is first opened through Spotify's link service.</li>
+  <li><strong>Google Play</strong>: on Android, the purchase and the check for an active subscription go through the Google Play app on your phone. We do not see any payment method.</li>
+  <li><strong>Downloading the speech model</strong> (Android, Pro AI only): when you turn on transcription, the speech-recognition model comes from Google Play itself, as an on-demand part of the app's install. No audio and no detail about you is sent.</li>
 </ul>
+<p>If you asked Google Assistant to play a show on LevelCast, the voice request is processed by Google, and LevelCast only receives the show's name from it, which it then looks up in the library on your phone.</p>
 <p>In each of these requests your device talks to that server directly. As with any request on the internet, that server sees your device's IP address, and it follows its own privacy policy. <strong>The audio never passes through us.</strong> We have no proxy, no copy of the episode, and no log of what you listen to.</p>
+<p>The search words you typed and the list of shows you follow are sent to Apple to get results and new episodes. They are not sent to us.</p>
 
 <h2>Audio processing</h2>
 <p>Volume levelling, intro detection and pace matching all run on the phone. No audio sample is sent anywhere.</p>
 
 <h2>Transcription</h2>
-<p>Transcription (live transcript and moment transcripts) uses iOS speech recognition, on the phone only. The app requires on-device recognition, so no audio clip is sent to any service. On a device that can't recognise speech locally in the episode's language, transcription is simply not available.</p>
+<p>On the iPhone, transcription uses iOS speech recognition, on the phone only. On Android, it uses a speech-recognition model that runs on the phone itself (based on Whisper, fine-tuned by ivrit.ai), downloaded once. On both platforms, no audio clip is sent to any service.</p>
 
 <h2>Moments you capture</h2>
-<p>The audio clip and the text are stored on the device. They are sent only when you choose to share them, to the destination you choose, through the iOS share sheet.</p>
+<p>The audio clip and the text are stored on the device. They are sent only when you choose to share them, to the destination you choose, through the device's share sheet.</p>
 
 <h2>Subscription</h2>
-<p>Purchases are made with Apple. We do not see or store any payment method. The app asks the device whether there is an active subscription, and that's all.</p>
+<p>On the iPhone, purchases are made with Apple; on Android, with Google Play. We do not see or store any payment method. The app asks the store on the device whether there is an active subscription, and that's all.</p>
 
 <h2>Notifications</h2>
-<p>If you turned on notifications for new episodes, they are created on the device after the feeds refresh. There is no notification server and no token sent to anyone.</p>
+<p>If you turned on notifications for new episodes, they are created on the device after the feeds refresh. There is no notification server and no token sent to anyone. On Android 13 and later, the app asks for notification permission only when you turn notifications on, and background refresh runs through Android's own task scheduler (WorkManager), reaching only Apple and the producers' servers, just like an ordinary refresh.</p>
 
 <h2>This website</h2>
 <p>The site is hosted by Cloudflare, which receives the usual request details (IP address, browser type) to serve the page and protect it. The site has no cookies, no analytics and no third-party scripts. The "Reduce motion" button stores your choice in your browser only.</p>
